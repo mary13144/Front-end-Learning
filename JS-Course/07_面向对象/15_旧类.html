@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            /*
+                早期JS中，直接通过函数来定义类
+                    - 一个函数如果直接调用 xxx() 那么这个函数就是一个普通函数
+                    - 一个函数如果通过new调用 new xxx() 那么这个函数就是一个够早函数
+
+
+             */
+
+            /* 
+                等价于：
+                    class Person{
+
+                    }
+             
+             */
+
+            var Person = (function () {
+                function Person(name, age) {
+                    // 在构造函数中，this表示新建的对象
+                    this.name = name
+                    this.age = age
+
+                    // this.sayHello = function(){
+                    //     console.log(this.name)
+                    // }
+                }
+
+                // 向原型中添加属性（方法）
+                Person.prototype.sayHello = function () {
+                    console.log(this.name)
+                }
+
+                // 静态属性
+                Person.staticProperty = "xxx"
+                // 静态方法
+                Person.staticMethod = function () {}
+
+                return Person
+            })()
+
+            const p = new Person("孙悟空", 18)
+
+            // console.log(p)
+
+
+            var Animal = (function(){
+                function Animal(){
+
+                }
+
+                return Animal
+            })()
+
+
+            var Cat = (function(){
+                function Cat(){
+
+                }
+
+                // 继承Animal
+                Cat.prototype = new Animal()
+
+                return Cat
+            })()
+
+            var cat = new Cat()
+
+            console.log(cat)
+        </script>
+    </head>
+    <body></body>
+</html>

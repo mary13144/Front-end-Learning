@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			#box1 {
+				width: 300px;
+				height: 300px;
+				background-color: #bfa;
+				position: absolute;
+			}
+		</style>
+		<script>
+			window.onload = function () {
+				/* 
+                拖拽元素分三个步骤：
+                    1.鼠标在box1中按下，事件开始（mousedown）
+                    2.鼠标移动，box1跟随（mousemove）
+                    3.鼠标放开，box1留在原位置不动（mouseup）
+            */
+				// 获取box1元素
+				const box1 = document.getElementById("box1");
+				// 1.鼠标在box1中按下，事件开始（mousedown）
+				box1.onmousedown = (eventdown) => {
+
+                    console.log('mousedown触发');
+                    // 2.鼠标移动，box1跟随（mousemove）
+					document.onmousemove = (eventmove) => {
+                        /* 
+                            event.offsetX and event.offsetY
+                            规定了事件对象与目标节点的内填充边（padding edge）在 X/Y 轴方向上的偏移量。
+                        */  
+						box1.style.left = eventmove.clientX - eventdown.offsetX + "px";
+						box1.style.top = eventmove.clientY - eventdown.offsetY +"px";
+					};
+                    // 3.鼠标放开，box1留在原位置不动（mouseup）
+					document.onmouseup = () => {
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                    };
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<div id="box1"></div>
+	</body>
+</html>

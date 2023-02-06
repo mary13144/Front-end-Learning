@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 3.外部样式表，可以将样式写在外部css文件中
+        写完后通过link标签引入css文件
+        可以在多个网页复用，开发中的最佳方式
+        将样式编写到外部的css文件当中，可以使用到游览器的缓存机制
+        从而加快网页的加载速度，提高用户体验    
+    -->
+    <title>CSS</title>
+    <!-- 2.内部样式 ,写在head中，用style标签和css选择器选择要改变
+        样式的标签，相比行内样式更加容易复用。问题在于样式作用 
+        范围仅限于当前页面，无法复用到其他网页
+    -->
+    <style>
+        h1{
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        网页分成3个部分：
+           结构：html
+           表现：css
+           行为：JavaScript
+        CSS：
+           -层叠样式表
+           -网页实际上是一个多层次的结构
+           -通过css可以为网页的每一个层次设置样式
+           最终我们能看到的是网页最上面的一层
+     -->
+     <!-- 1.内联样式，最好不要使用 -->
+     <h1>标题</h1>
+     <p style="color: red;">测试样式</p>
+</body>
+</html>

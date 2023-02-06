@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #box1 {
+                width: 200px;
+                height: 200px;
+                padding: 100px;
+                border: 10px red solid;
+                background-color: #bfa;
+            }
+
+            #box2 {
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+            }
+
+            #box3 {
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+            }
+        </style>
+        <script src="./scripts/jquery-3.6.1.js"></script>
+        <script>
+            $(function () {
+                $("#btn").click(function () {
+                    /* 
+                        css 可以用来读取或设置元素的样式
+                    */
+
+                    var $width = $("#box1").css("width")
+
+                    // alert($("#box1").css("background-color"))
+                    // alert($("#box1").css("left"))
+
+                    // $("#box1").css("width", 300)
+
+                    // $("#box1").css({width:300, height:500, backgroundColor:"yellow"})
+
+                    // alert($("#box1").innerHeight())
+
+                    // $("#box1").innerHeight(500)
+
+                    // alert($("#box1").offset().top + '--' + $("#box1").offset().left)
+
+                    $("#box1").offset({ top: 500, left: 300 })
+                })
+
+                $("#btn2").click(function () {})
+
+                $("#btn3").click(function () {})
+            })
+        </script>
+    </head>
+    <body>
+        <button id="btn">点我</button>
+        <button id="btn2">点我2</button>
+        <hr />
+
+        <div id="box1"></div>
+
+        <hr />
+
+        <hr />
+
+        <button id="btn3">点我3</button>
+    </body>
+</html>

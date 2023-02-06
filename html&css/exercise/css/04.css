@@ -1,0 +1,65 @@
+body {
+    font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", Verdana, Arial, '微软雅黑', '宋体';
+    font-size: 18px;
+}
+
+.box {
+    width: 1210px;
+    height: 48px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.nav-top a {
+    display: block;
+    text-decoration: none;
+    color: rgb(127, 127, 126);
+    /* font-weight: bold; */
+}
+
+.nav-top {
+    float: left;
+    height: 48px;
+    background-color: rgb(232, 231, 227);
+    line-height: 48px;
+    text-align: center;
+}
+
+/* .nav-top:hover{
+    cursor: pointer;
+    background-color: rgb(63,63,63);
+} */
+
+a:hover,a:active {
+    cursor: pointer;
+    color: white;
+    background-color: rgb(63, 63, 63);
+}
+
+#box1 {
+    width: 166px;
+}
+
+#box2 {
+    width: 191px;
+}
+
+#box3 {
+    width: 175px;
+}
+
+#box4 {
+    width: 198px;
+}
+
+#box5 {
+    width: 113px;
+}
+
+#box6 {
+    width: 197px;
+}
+
+#box7 {
+    width: 170px;
+}

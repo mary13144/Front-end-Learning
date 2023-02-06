@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 
+
+        autocomplete："off" 关闭自动补全
+                      "on"  开启自动补全
+        readonly: 意味着只读，该input只能为默认值无法修改，会提交到后台服务器
+        required：意味表单提交前，用户必须填写该项
+        disabled：意味表单项设置为禁用,该表单项得数据提交后不会传输到后台
+        autofucus: 自动获取焦点
+        placeholder：提示需要输入的内容
+     -->
+    <form action="target.html" autocomplete="off">
+      username: &nbsp;<input type="text" name="username" value="1427183122" readonly/> <br /><br />
+      password: &nbsp;<input type="password" name="password"  autofocus placeholder="密码"/>
+
+      <br /><br />
+      <button type="reset">重置</button>
+
+      <br /><br />
+      <!-- type = "email" 会自动检查输入格式是否符合邮箱格式（是否含有@） -->
+      <input type="email" />
+      <br /><br />
+      <!-- type = "tel" 在移动端会自动弹出数字键盘，搭配pattern 可以控制输入的格式。pattern必须符合正则式规范 -->
+      <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+      <br /><br />
+      <button type="submit">提交</button>
+    </form>
+  </body>
+</html>

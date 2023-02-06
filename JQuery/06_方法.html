@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <script src="./scripts/jquery-3.6.1.js"></script>
+    <script>
+		$(function () {
+			/*
+                unwrap() 删除外层父元素
+                wrap() 为当前元素添加一个容器
+                wrapAll() 为当前的所有元素统一添加容器
+                wrapInner() 为当前元素添加一个内部容器
+            */
+			$('#btn').click(function () {
+				// $("#list li").unwrap()
+				$('#list li').wrap('div');
+				// $("#list li").wrapAll("<div/>")
+				// $("#list li").wrapInner("<div/>")
+
+			});
+		});
+    </script>
+</head>
+<body>
+<button id="btn">点我</button>
+
+<hr/>
+<ul id="list">
+    <li>孙悟空</li>
+    <li>猪八戒</li>
+</ul>
+
+<ul id="list2">
+    <li>沙和尚</li>
+    <li>唐僧</li>
+</ul>
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>25_扩展插件</title>
+  <style type="text/css">
+    * {
+      margin: 0px;
+    }
+
+    .div1 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      top: 50px;
+      left: 10px;
+      background: red;
+    }
+  </style>
+</head>
+<body>
+<input type="checkbox" name="items" value="足球"/>足球
+<input type="checkbox" name="items" value="篮球"/>篮球
+<input type="checkbox" name="items" value="羽毛球"/>羽毛球
+<input type="checkbox" name="items" value="乒乓球"/>乒乓球
+<br/>
+<input type="button" id="btn1" value="全　选"/>
+<input type="button" id="btn2" value="全不选"/>
+<input type="button" id="btn3" value="反选"/>
+
+<!--
+1. 扩展jQuery的工具方法
+  $.extend(object)
+2. 扩展jQuery对象的方法
+  $.fn.extend(object)
+-->
+<script type="text/javascript" src="js/jquery-1.10.1.js"></script>
+<script type="text/javascript" src="js/my_jQuery_plugin.js"></script>
+<script type="text/javascript">
+console.log($.min(9,11));
+console.log($.max(9,11));
+var str = '    atguigu    ';
+console.log($.leftTrim(str));
+console.log($.rightTrim(str));
+var $checkNodes = $(':checkbox');
+$('#btn1').click(function () {
+    $checkNodes.checkAll();
+});
+$('#btn2').click(function () {
+    $checkNodes.unCheckAll();
+});
+$('#btn3').click(function () {
+  $checkNodes.reverseCheck();
+})
+//var obj = {
+//    name:'hahah',
+//    fn:function () {
+//      console.log(this.name)
+//    }
+//}
+//obj.fn();
+
+</script>
+
+</body>
+</html>

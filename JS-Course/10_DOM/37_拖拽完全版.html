@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+        }
+
+        #box3 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        .drag {
+            position: absolute;
+            z-index: 2;
+        }
+    </style>
+
+    <script>
+		window.onload = function () {
+			/*
+                希望网页中具有drag类的元素都可以拖拽
+            */
+			let dragElm = null;
+            let left;
+            let top;
+			// 1.给document绑定mousedown事件
+			document.addEventListener('mousedown', (event) => {
+				if (event.target.classList.contains('drag')) {
+                    event.preventDefault();
+					dragElm = event.target;
+                    left = event.offsetX;
+                    top = event.offsetY;
+				}
+			});
+
+			document.addEventListener('mousemove', (event) => {
+				if (dragElm) {
+					dragElm.style.left = event.clientX - left + 'px';
+					dragElm.style.top = event.clientY - top + 'px';
+				}
+			});
+
+			document.addEventListener('mouseup', (event) => {
+                dragElm = null;
+			})
+		};
+    </script>
+</head>
+<body>
+<div id="box1" class="drag"></div>
+<div id="box2" class="drag"></div>
+<div id="box3"></div>
+</body>
+</html>

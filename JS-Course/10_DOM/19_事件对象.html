@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #box1 {
+                width: 300px;
+                height: 300px;
+                background-color: greenyellow;
+            }
+
+            #box2 {
+                width: 250px;
+                height: 250px;
+                background-color: #ff0;
+            }
+
+            #box3 {
+                width: 200px;
+                height: 200px;
+                background-color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box1">
+            <div id="box2">
+                <div id="box3"></div>
+            </div>
+        </div>
+
+        <a id="chao" href="https://lilichao.com">超链接</a>
+
+        <script>
+            /* 
+            在DOM中存在着多种不同类型的事件对象
+                - 多种事件对象有一个共同的祖先 Event
+                    - event.target 触发事件的对象
+                    - event.currentTarget 绑定事件的对象（同this）
+                    - event.stopPropagation() 停止事件的传导
+                    - event.preventDefault() 取消默认行为
+                - 事件的冒泡（bubble）
+                    - 事件的冒泡就是指事件的向上传到
+                    - 当元素上的某个事件被触发后，其祖先元素上的相同事件也会同时被触发
+                    - 冒泡的存在大大的简化了代码的编写，但是在一些场景下我们并不希望冒泡存在
+                        不希望事件冒泡时，可以通过事件对象来取消冒泡
+                
+        
+        */
+            const box1 = document.getElementById("box1")
+            const box2 = document.getElementById("box2")
+            const box3 = document.getElementById("box3")
+            const chao = document.getElementById("chao")
+
+            chao.addEventListener("click", (event) => {
+
+                event.preventDefault() // 取消默认行为
+
+                alert("被点了~~~")
+
+            })
+
+            box1.addEventListener("click", function (event) {
+                // alert(event)
+                /* 
+                在事件的响应函数中：
+                    event.target 表示的是触发事件的对象
+                    this 绑定事件的对象
+            */
+                // console.log(event.target)
+                // console.log(this)
+
+                console.log(event.currentTarget)
+
+                // alert("Hello 我是box1")
+            })
+
+            // box2.addEventListener("click", function(event){
+            //     event.stopPropagation()
+            //     alert("我是box2")
+            // })
+
+            // box3.addEventListener("click", function(event){
+            //     event.stopPropagation() // 取消事件的传到
+            //     alert("我是box3")
+            // })
+        </script>
+    </body>
+</html>

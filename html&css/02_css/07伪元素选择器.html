@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>伪元素选择器</title>
+    <style>
+      /* 
+           伪元素：
+               表示页面中的一些特殊的并不真实存在的元素（特殊的位置）
+                  伪元素用::开头
+                ::first-letter表示第一个字母
+                ::first-line表示第一行
+                ::selection表示选择的内容
+                ::after表示元素最后的位置
+                ::before表示元素起始的位置
+        */
+      p::first-letter {
+        font-size: 20px;
+      }
+      p::first-line {
+        background-color: red;
+      }
+      p::selection {
+        background-color: cyan;
+      }
+      div::before {
+        content: "ab";
+        color: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <div>hello hello world</div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, vitae laborum
+      quisquam natus porro ipsam quas eligendi autem, alias laudantium aut atque
+      a facilis at nesciunt excepturi, deserunt est nisi?
+    </p>
+  </body>
+</html>

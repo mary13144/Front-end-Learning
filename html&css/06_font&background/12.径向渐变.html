@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+
+            /* 
+            radial-gradient() 径向渐变效果，由圆点中心向四周逐渐变化颜色
+                默认情况径向渐变是根据元素本身形状决定：
+                     正方形----->圆形
+                     长方形----->椭圆形
+                也可以手动指定径向渐变得范围
+                circle 
+                ellipse
+
+                也可以指定渐变的位置
+                语法：radial-gradient（范围 at 起点位置，颜色 位置，颜色 位置....）
+                范围：
+                     circle 
+                     ellipse
+                     closest-side 近边
+                     closest-corner 近角
+                     farthest-side 远边
+                     farthest-corner 远角
+                位置：
+                     top left right bottom center
+            */
+
+            background-image: radial-gradient(100px 100px at 0 0, red,yellow);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

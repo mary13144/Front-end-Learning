@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            求 1000 以内的水仙花数
+                - 水仙花数
+                    - 一个n位数（n >= 3），如果它各个位上数字的n次幂之和还等于这个数，那么这个数就是一个水仙花数
+                    - 153 --> 1  5  3 --> 1  125  27 --> 153
+        */
+
+        // 获取所有的三位数
+        // for(let i=100; i<1000; i++){
+            
+        //     // 如果i的百位数字 十位数字 个位数字的立方和 还等于 i 则i就是水仙花数
+        //     let bai = parseInt(i / 100)
+
+        //     // 获取十位数
+        //     let shi = parseInt((i - bai * 100) / 10)
+
+        //     // 获取个位数
+        //     let ge = i % 10
+
+        //     // console.log(i,"-->",bai, shi, ge)
+
+        //     // 判断i是否是水仙花数
+        //     if(bai**3 + shi**3 + ge**3 === i){
+        //         console.log(i)
+        //     }
+
+        // }
+
+        for(let i=100; i<1000; i++){
+            let strI = i + ""
+            if(strI[0] ** 3 + strI[1] ** 3 + strI[2] ** 3 === i){
+                console.log(i)
+            }
+        }
+
+        /* 
+            获取用户输入的大于1的整数（暂时不考虑输错的情况）
+                然后编写代码检查这个数字是否是质数，并打印结果
+
+            质数
+                - 一个数如果只能被1和它本身整除，那么这个数就是质数
+                - 1既不是质数也不是合数
+        */
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

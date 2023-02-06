@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 求100以内所有3的倍数（求它们个数和总和）
+        let count = 0 // 计数器
+        let result = 0 // 用来存储计算结果（累加结果）
+
+        // // 求100以内所有的数
+        // for(let i=1; i<=100; i++){
+
+        //     // 获取3的倍数
+        //     if(i % 3 === 0){
+        //         count++
+        //         result += i
+        //     }
+        // }
+
+
+
+        for(let i=3; i<=100; i+=3){
+            count++
+            result += i
+        }
+        
+        console.log(`3的倍数一共有${count}个，总和为${result}`)
+
+
+        /* 
+            求 1000 以内的水仙花数
+                - 水仙花数
+                    - 一个n位数（n >= 3），如果它各个位上数字的n次幂之和还等于这个数，那么这个数就是一个水仙花数
+                    - 153 --> 1  5  3 --> 1  125  27 --> 153
+        
+        */
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

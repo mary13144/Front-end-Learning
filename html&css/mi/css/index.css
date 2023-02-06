@@ -1,0 +1,499 @@
+/* 主页样式表 */
+
+/* 顶部导航栏容器 */
+nav {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background-color: #333;
+}
+
+/* 设置导航栏左侧样式 */
+.top-left {
+  float: left;
+}
+
+/* 下拉二维码样式 */
+.qrcode {
+  /* display: none; */
+  width: 124px;
+  height: 0px;
+  overflow: hidden;
+  transition: height 0.3s;
+  line-height: 1;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: -40px;
+  z-index: 999;
+}
+
+.qrcode img {
+  width: 90px;
+  margin: 17px;
+  margin-bottom: 10px;
+  /* margin-top: 17px; */
+}
+.qrcode p {
+  color: #000;
+  font-size: 14px;
+}
+
+/* 设置二维码小三角 */
+.app {
+  position: relative;
+}
+.app:hover::after {
+  content: "";
+  width: 0;
+  /* 设置四个方向得边框 */
+  border: 8px solid transparent;
+  border-top: none;
+  border-bottom-color: #fff;
+  position: absolute;
+  top: 32px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+/* 设置二维码移入效果 */
+.app:hover .qrcode {
+  /* display: block; */
+  height: 148px;
+}
+
+/* 设置导航栏右侧样式 */
+.top-right,
+.shop-cart {
+  float: right;
+}
+
+/*让内部连接横向排列  */
+.topbar li {
+  float: left;
+}
+
+/* 设置超链接颜色 */
+.topbar a {
+  font-size: 12px;
+  color: #b0b0b0;
+  display: block;
+}
+
+/* 设置超链接移入效果 */
+.topbar a:hover {
+  color: #fff;
+}
+
+/* 设置分割线样式 */
+.topbar .line {
+  color: #424242;
+  font-size: 12px;
+  margin: 0 8px;
+}
+
+/* 设置购物车位置 */
+.shop-cart {
+  margin-left: 26px;
+  position: relative;
+}
+
+/* 设置购物车样式 */
+.shop-cart a {
+  width: 120px;
+  text-align: center;
+  background-color: #424242;
+}
+
+/* 设置购物车移入效果 */
+.shop-cart:hover a {
+  color: #ff6700;
+  background-color: #fff;
+}
+
+/* 购物车下拉菜单效果 */
+.shopping {
+  width: 316px;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s;
+  background-color: #fff;
+  box-shadow: -8px 8px 8px -8px rgba(0, 0, 0, 0.2),
+    8px 8px 8px -8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: -196px;
+  line-height: 90px;
+  color: #000;
+  font-size: 12px;
+  z-index: 999;
+}
+
+/* 购物车动画 */
+.shop-cart:hover .shopping {
+  height: 90px;
+}
+
+/* 头部容器布局 */
+header {
+  position: relative;
+}
+/* 头部容器样式 */
+.head {
+  height: 100px;
+}
+/* logo样式 */
+.head .logo {
+  position: relative;
+  width: 55px;
+  height: 55px;
+  overflow: hidden;
+  margin-top: 22.5px;
+  /* 隐藏logo下的文字 */
+  text-indent: -9999px;
+  float: left;
+}
+.head .logo a {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  background-color: #ff6700;
+  background-image: url("../img/mi-logo.png");
+  background-position: center;
+}
+.head .logo .mi {
+  background-image: url("../img/mi-logo.png");
+  left: 0;
+  transition: left 0.3s;
+}
+.head .logo .home {
+  left: -55px;
+  background-image: url("../img/mi-home.png");
+  transition: left 0.3s;
+}
+
+/* 鼠标移入图标切换效果 */
+.head .logo:hover .mi {
+  left: 55px;
+}
+.head .logo:hover .home {
+  left: 0px;
+}
+
+/* 头部导航栏布局 */
+.nav-wrapper {
+  width: 850px;
+  margin-left: 7px;
+  float: left;
+  line-height: 100px;
+  /* background-color: #bfa; */
+}
+.nav-wrapper .nav {
+  margin-left: 58px;
+}
+
+/* 让导航栏浮动 */
+.nav-wrapper .nav > li {
+  float: left;
+}
+
+/* 设置导航栏样式 */
+.nav li a {
+  font-size: 16px;
+  padding: 0 10px;
+  color: #333;
+  display: block;
+}
+
+/*设置导航栏鼠标移入样式  */
+.nav li a:hover {
+  color: #ff6700;
+}
+
+.all-goods {
+  visibility: hidden;
+}
+
+/* 设置导航栏下拉菜单样式 */
+.nav-wrapper .goods-info {
+  /* height: 230px; */
+  height: 0;
+  transition: height 0.3s;
+  width: 100%;
+  /* background-color: #bfa; */
+  position: absolute;
+  left: 0;
+  top: 100px;
+  z-index: 999;
+  background-color: #fff;
+  /* border-top:1px solid rgb(224, 224, 224) ; */
+  box-shadow: -10px 10px 10px -10px rgba(0, 0, 0, 0.2),
+    10px 10px 10px -10px rgba(0, 0, 0, 0.2);
+}
+
+/* 设置导航栏下拉菜单动画效果 */
+.nav li:not(:first-of-type, :nth-of-type(9), :last-of-type):hover ~ .goods-info,
+.nav .goods-info:hover {
+  height: 230px;
+  border-top: 1px solid rgb(224, 224, 224);
+  /* box-shadow: -10px 10px 10px -10px rgba(0, 0, 0, .2), 10px 10px 10px -10px rgba(0, 0, 0, .2); */
+}
+
+/* 右边搜索框布局 */
+.search-wrapper {
+  width: 296px;
+  height: 50px;
+  float: right;
+  margin-top: 25px;
+  /* background-color: #bfa; */
+}
+
+/* 搜索框样式 */
+.search-wrapper .search-inp {
+  width: 243px;
+  height: 50px;
+  float: left;
+  border: none;
+  padding: 0 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border: 1px solid rgb(224, 224, 224);
+  outline: none;
+}
+
+/* 搜索按钮样式 */
+.search-wrapper .search-btn {
+  float: left;
+  width: 52px;
+  height: 50px;
+  border: none;
+  padding: 0;
+  border: 1px solid rgb(224, 224, 224);
+  border-left: none;
+  background-color: #fff;
+  color: #616161;
+  font-size: 16px;
+}
+
+/* 设置输入框焦点特效 */
+.search-wrapper .search-inp:focus,
+.search-wrapper .search-inp:focus + .search-btn {
+  border-color: #ff6700;
+}
+
+/* 设置搜索按钮移入效果 */
+.search-wrapper .search-btn:hover {
+  background-color: #ff6700;
+  color: #fff;
+  border: none;
+}
+
+/* 设置中部左侧导航条布局 */
+.pos {
+  position: relative;
+}
+
+.left-menu {
+  box-sizing: border-box;
+  padding: 20px 0;
+  width: 234px;
+  height: 460px;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-size: 16px;
+  /* line-height: 1; */
+  position: absolute;
+  left: -120px;
+  z-index: 99;
+}
+
+.left-menu li a {
+  height: 42px;
+  display: block;
+  line-height: 42px;
+  color: #fff;
+  padding: 0 30px;
+}
+
+.left-menu li a:hover {
+  color: #fff;
+  background-color: #ff6700;
+}
+
+.left-menu li i {
+  float: right;
+  line-height: 42px;
+}
+
+/* 设置banner样式 */
+.banner {
+  position: relative;
+  height: 460px;
+}
+
+.banner .img-list li {
+  position: absolute;
+}
+
+.banner img {
+  width: 100%;
+  vertical-align: top;
+}
+
+/* 设置banner的圆点样式与布局 */
+.pointer {
+  position: absolute;
+  /* float: right; */
+  right: 30px;
+  bottom: 20px;
+}
+
+.pointer a {
+  float: left;
+  width: 6px;
+  height: 6px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  margin-left: 6px;
+}
+
+.pointer a:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+/* 设置箭头样式与布局 */
+.prev-next a {
+  width: 41px;
+  height: 69px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  /* background-color: red; */
+  background-image: url("../img/icon-slides.png");
+}
+
+.prev-next .prev {
+  left: 234px;
+  background-position: -84px 0;
+}
+
+.prev-next .prev:hover {
+  background-position: 0 0;
+}
+
+.prev-next .next {
+  right: 0;
+  background-position: -125px 0;
+}
+
+.prev-next .next:hover {
+  background-position: -42px 0;
+}
+
+/* 设置右侧工具箱样式和布局 */
+aside {
+  width: 26px;
+  height: 206px;
+  background-color: #bfa;
+  position: fixed;
+  bottom: 60px;
+  right: 50%;
+  margin-right: -639px;
+  /* 
+    布局的等式：
+        left + margin-left + width + margin-right + right = 窗口宽度
+
+        auto + 0 + 26px + 0 + 50% = 窗口宽度
+        
+    */
+}
+
+/* 底部广告栏布局和样式 */
+footer.ad {
+  height: 170px;
+  margin-top: 14px;
+}
+
+.ad-img,
+.shortcut,
+footer li {
+  float: left;
+}
+
+/* 设置底部左侧shortcut快捷方式 */
+footer .shortcut {
+  width: 228px;
+  height: 168px;
+  background-color: #5f5750;
+  margin-right: 14px;
+  padding-top: 2px;
+  padding-left: 6px;
+}
+
+footer .shortcut li {
+  position: relative;
+}
+
+footer .shortcut li::before {
+  content: "";
+  width: 64px;
+  height: 1px;
+  position: absolute;
+  background-color: #665e57;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+footer .shortcut li::after {
+  content: "";
+  height: 70px;
+  width: 1px;
+  position: absolute;
+  background-color: #665e57;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+/* 设置shortcut中的超链接 */
+footer .shortcut a {
+  display: block;
+  color: #cfccca;
+  width: 76px;
+  height: 84px;
+  text-align: center;
+  font-size: 12px;
+}
+
+footer .shortcut a:hover {
+  color: #fff;
+}
+
+/* 设置shortcut中的图表字体 */
+footer .shortcut i {
+  display: block;
+  padding-top: 20px;
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+footer .ad-img li {
+  width: 316px;
+  margin-right: 15px;
+}
+
+footer .ad-img li:last-child {
+  margin-right: 0;
+}
+
+footer .ad-img li img {
+  width: 100%;
+}
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            /* 
+                优化前
+                    1. 10000以内：290ms
+                    2. 100000以内：28202ms
+
+                第一次优化：
+                    1. 10000以内：30ms
+                    2. 100000以内：2331ms
+
+            
+                问题：如何修改代码，提升其性能
+            */
+
+            // 开始一个计时器
+            console.time('质数练习')
+
+            for (let i = 2; i < 1000000; i++) {
+                let flag = true
+
+                for (let j = 2; j < i; j++) {
+                    if (i % j === 0) {
+                        flag = false
+                        // 进入判断说明i一定不是质数，后续检查没有执行的必要
+                        break
+                    }
+                }
+
+                if (flag) {
+                    //console.log(i)
+                }
+            }
+
+            // 停止计时器
+            console.timeEnd('质数练习')
+        </script>
+    </head>
+    <body></body>
+</html>

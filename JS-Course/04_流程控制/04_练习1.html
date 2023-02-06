@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>练习1</title>
+        <script>
+            /* 
+                - 练习1：
+                    编写一个程序，获取一个用户输入的整数。然后通过程序显示这个数是奇数还是偶数。
+            */
+            // 编写一个程序，获取一个用户输入的整数
+            // let num = +prompt("请输入一个整数")
+            // let num = parseInt(prompt("请输入一个整数"))
+
+            // 验证一下，用户的输入是否合法，只有是有效数字时，我们才检查它是否是偶数
+            // 我们不能使用==或===来检查一个值是否是NaN
+            // 可以使用isNaN()函数来检查一个值是否是NaN
+            // if (isNaN(num)) {
+            //     alert("你的输入有问题，请输入整数！")
+            // } else {
+            //     // 然后通过程序显示这个数是奇数还是偶数。
+            //     if (num % 2 === 0) {
+            //         alert(`${num} 是偶数！`)
+            //     } else {
+            //         alert(`${num} 是奇数！`)
+            //     }
+            // }
+
+
+            // ************************************************************
+
+            let intnum = +prompt("请输入一个整数：");
+            console.log(typeof(intnum));
+
+            if(isNaN(intnum)){
+                alert("输入不合法，请输入一个数字。");
+            }else if(parseInt(intnum)<intnum){
+                alert("请输入一个整数。");
+            }else if(intnum%2==0){
+                alert(`${intnum}是一个偶数`);
+            }else{
+                alert(`${intnum}是一个奇数`);
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

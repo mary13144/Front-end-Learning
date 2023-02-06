@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+
+            /* 
+                修改对象
+                    - 修改对象时，如果有其他变量指向该对象
+                        则所有指向该对象的变量都会受到影响
+
+                修改变量
+                    - 修改变量时，只会影响当前的变量
+
+                在使用变量存储对象时，很容易因为改变变量指向的对象，提高代码的复杂度
+                    所以通常情况下，声明存储对象的变量时会使用const
+
+                注意：
+                    const只是禁止变量被重新赋值，对对象的修改没有任何影响
+
+            */
+            const obj = {
+                name: "孙悟空",
+            }
+
+            const obj2 = obj
+
+            // obj2 = {}
+
+            obj2.name = "猪八戒" // 修改对象
+
+            // obj2 = null // 修改变量
+
+            // console.log(obj)
+            // console.log(obj2)
+
+            const obj3 = {
+                name:"猪八戒"
+            }
+
+            obj3.name = "沙和尚"
+
+            console.log(obj3)
+            
+        </script>
+    </head>
+    <body></body>
+</html>

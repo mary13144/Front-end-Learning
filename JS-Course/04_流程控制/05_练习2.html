@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>练习2</title>
+        <script>
+            /* 
+                - 练习1：
+                    编写一个程序，获取一个用户输入的整数。然后通过程序显示这个数是奇数还是偶数。
+            */
+            // 编写一个程序，获取一个用户输入的整数
+            // let num = +prompt("请输入一个整数")
+            // let num = parseInt(prompt("请输入一个整数"))
+
+            // 验证一下，用户的输入是否合法，只有是有效数字时，我们才检查它是否是偶数
+            // 我们不能使用==或===来检查一个值是否是NaN
+            // 可以使用isNaN()函数来检查一个值是否是NaN
+            // if (isNaN(num) || num % 1 !== 0) {
+            //     alert("你的输入有问题，请输入整数！")
+            // } else {
+            //     // 然后通过程序显示这个数是奇数还是偶数。
+            //     if (num % 2 === 0) {
+            //         alert(`${num} 是偶数！`)
+            //     } else {
+            //         alert(`${num} 是奇数！`)
+            //     }
+            // }
+
+
+            /* 
+                - 练习2：
+                    从键盘输入小明的期末成绩:
+                        当成绩为100时，'奖励一辆BMW'
+                        当成绩为[80-99]时，'奖励一台iphone'
+                        当成绩为[60-79]时，'奖励一本参考书'
+                        其他时，什么奖励也没有
+            */
+
+            //从键盘输入小明的期末成绩
+            let score = +prompt('请输入小明的期末成绩：')
+
+            // 检查score是否合法
+            if(isNaN(score) || score<0 || score>100){
+                alert('请输入一个合法的分数')
+            }else{
+                // 当成绩为100时，'奖励一辆BMW'
+                if(score === 100){
+                    alert('汽车一辆~')
+                }else if(score >= 80){
+                   // 当成绩为[80-99]时，'奖励一台iphone'
+                   alert('手机一台~')
+                }else if(score >= 60){
+                    // 当成绩为[60-79]时，'奖励一本参考书'
+                    alert('参考书一本~')
+                }else{
+                    // 其他时，什么奖励也没有
+                    alert('啥也没有~')
+                }
+            }
+
+        </script>
+    </head>
+    <body></body>
+</html>

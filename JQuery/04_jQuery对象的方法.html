@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="./scripts/jquery-3.6.1.js"></script>
+        <style>
+            .box1 {
+                width: 200px;
+                height: 200px;
+                background-color: #bfa;
+            }
+
+            .box2 {
+                border: 10px red solid;
+            }
+
+            .box3 {
+                background-color: orange;
+            }
+        </style>
+        <script>
+            // https://api.jquery.com/category/manipulation/class-attribute/
+            $(function () {
+                // 为按钮绑定响应函数
+                $("#btn").click(function () {
+                    // 为box1添加class
+                    // addClass() 可以为元素添加一个或多个class
+                    // $(".box1").addClass(["box2", "box3"])
+
+                    // addClass可以接收一个回调函数作为参数
+                    // $(".box1").addClass(function (index, className) {
+                    //     // 在回调函数中，this表示的是当前的元素
+
+                    //     // if (index % 2 === 0) {
+                    //     //     // 添加box2
+                    //     //     this.classList.add("box2")
+                    //     // } else {
+                    //     //     // 添加box3
+                    //     //     this.classList.add("box3")
+                    //     // }
+
+                    //     if (index % 2 === 0) {
+                    //         // 添加box2
+                    //         $(this).addClass("box2")
+                    //     } else {
+                    //         // 添加box3
+                    //         $(this).addClass("box3")
+                    //     }
+                    // })
+
+                    $(".box1").addClass(function(index){
+
+                        // 回调函数的返回值会成为当前元素的class
+                        // return ["box2", "box3"]
+
+                        if(index % 2 === 0){
+                            return "box2"
+                        }else{
+                            return "box3"
+                        }
+
+                    })
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="btn">点我</button>
+
+        <hr />
+
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+    </body>
+</html>

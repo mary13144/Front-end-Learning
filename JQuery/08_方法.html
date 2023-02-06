@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #box1 {
+                width: 200px;
+                height: 200px;
+                background-color: #bfa;
+            }
+
+            #box2 {
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+            }
+
+            #box3 {
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+            }
+        </style>
+        <script src="./scripts/jquery-3.6.1.js"></script>
+        <script>
+            $(function () {
+                /* 
+                    empty() 删除所有的子元素
+                    remove() 移除元素（移除事件）
+                    detach() 移除元素
+                */
+
+                var $li = $("li:nth-child(1)")
+
+                $li.click(function () {
+                    alert("哈哈哈")
+                })
+
+                $("#btn").click(function () {
+                    // $("ul").empty()
+
+                    // $("li:nth-child(1)").remove()
+                    $("li:nth-child(1)").detach()
+                })
+
+                $("#btn2").click(function () {
+                    $("ul").append($li)
+                })
+
+                $("#btn3").click(function () {
+                    /* 
+                        attr() 读取布尔值返回实际值
+                        prop() 读取布尔值返回 true/false
+                            - 用来读取或设置元素的属性
+                            - 读取布尔值属性时两者不会返回不同的值
+                    */
+
+                    var type = $("input[type=text]").attr("type")
+                    var name = $("input[type=text]").prop("name")
+
+                    var checked = $("input[type=radio]").prop("checked")
+
+                    // alert(checked)
+
+                    // $("input[type=text]").prop("value","哈哈")
+                    // $("input[type=radio]").prop("checked", true)
+
+                    $("input[type=text]").val("xxx")
+
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="btn">点我</button>
+        <button id="btn2">点我2</button>
+        <hr />
+
+        <ul>
+            <li>孙悟空</li>
+            <li>猪八戒</li>
+            <li>沙和尚</li>
+            <li>唐僧</li>
+        </ul>
+
+        <input type="radio" name="gender" value="male" /> 男
+        <input type="radio" name="gender" value="female"  /> 女
+
+        <hr />
+
+        <input type="text" name="username" />
+
+        <hr />
+
+        <button id="btn3">点我3</button>
+    </body>
+</html>

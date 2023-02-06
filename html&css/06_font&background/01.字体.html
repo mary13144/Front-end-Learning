@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        可以将服务器中的字体直接提供给用户去使用
+            问题：
+                1.加载速度
+                2.版权问题
+         */
+        @font-face {
+            /* font-family：自己指定字体的名字 */
+            font-family: myfont;
+            /* url：指定字体的在服务器中的资源资源定位符 */
+            src: url('./font/ZCOOLXiaoWei-Regular.ttf');
+        }
+
+        /* 
+        字体相关样式
+        color：设置字体颜色
+        font-siez:设置字体大小
+            和font-size相关的单位
+            px像素
+            em：相当于当前元素的一个font-size
+            rem：相当于根元素的一个font-size
+        font-family：字体族（设置字体格式比如微软雅黑）
+            可选值：
+            serif：衬线字体
+            sans-serif：非衬线字体
+            monospace：等宽字体
+        */
+        p{
+            color: red;
+            font-size: 40px;
+            font-family:myfont;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        今天天气真不错！hello hello how are you？
+    </p>
+</body>
+</html>

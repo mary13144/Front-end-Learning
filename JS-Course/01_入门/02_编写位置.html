@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JS的编写位置</title>
+        <!-- 
+        1.可以将js编写到网页内部的script标签
+        -->
+        <!-- <script>
+            alert("哈哈！")
+        </script> -->
+
+        <!-- 
+            2.可以将js编写外部的js文件中，然后通过script标签进行引入
+        -->
+        <!-- <script src="./script/script.js"></script> -->
+    </head>
+    <body>
+        <!--
+            3.可以将js代码编写到指定属性中
+        -->
+        <button onclick="alert('你点我干嘛！')">点我一下</button>
+
+        <hr>
+
+        <a href="javascript:alert(123);">超链接</a>
+        
+        <hr>
+
+        <a href="javascript:;">超链接</a>
+    </body>
+</html>

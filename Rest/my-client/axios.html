@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Axios</title>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+	<button id="btn01">按钮1号</button>
+	<button id="btn02">按钮2号</button>
+	<script>
+		// console.log(axios);
+		const btn01 = document.getElementById('btn01');
+		const btn02 = document.getElementById('btn02');
+
+		btn01.onclick = () => {
+			axios({
+				method: 'post',
+				url: 'http://localhost:3000/login',
+				data: {
+					username: 'admin',
+					password: '123123'
+				}
+			}).then(result => {
+				//登陆成功
+				/*
+					result是axios封装过的
+					axios默认只会在返回状态码为2xx时调用then，其他状态码都会调用catch
+				 */
+				const token = result.data.data.token;
+				localStorage.setItem('token', token);
+				console.log(result);
+			}).catch(error => {
+				console.log(error);
+			});
+		};
+
+		btn02.onclick = async () => {
+			const token = localStorage.getItem('token');
+			const result = await axios({
+				method: 'get',
+				url: 'http://localhost:3000/students',
+				headers: {
+					authorization: `Bearer ${token}`
+				}
+			}).then(result => {
+				console.log(result);
+			}).catch(error => {
+				console.log(error);
+			});
+		};
+	</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 400px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        table {
+            width: 400px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        td,
+        th {
+            border: 1px black solid;
+            padding: 10px 0;
+        }
+
+        form div {
+            margin: 10px 0;
+        }
+    </style>
+    <script src="./scripts/jquery-3.6.1.js"></script>
+    <script>
+		$(function () {
+			// let $del = $('a');
+			let $add = $('button');
+			let $tbody = $('tbody');
+			$(document).on('click', 'a', function (event) {
+				$(event.target).parent().parent().remove();
+				return false;
+			});
+
+			$add.click(function () {
+				let $name = $('#name').val().trim();
+				let $email = $('#email').val().trim();
+				let $salary = $('#salary').val().trim();
+				// $tbody.append(`
+				//         <tr>
+				//         <td>${$name}</td>
+				//         <td>${$email}</td>
+				//         <td>${$salary}</td>
+				//         <td><a href="javascript:;">删除</a></td>
+				//         </tr>`);
+
+				let $tr = $('<tr>');
+				let $tdname = $('<td>');
+				let $tdemail = $('<td>');
+				let $tdsalary = $('<td>');
+
+				$tdname.text($name).appendTo($tr);
+				$tdemail.text($email).appendTo($tr);
+				$tdsalary.text($salary).appendTo($tr);
+				$('<td><a href="javascript:;">删除</a></td>').appendTo($tr);
+
+				$tbody.append($tr);
+
+				$('#name').val("")
+				$('#email').val("")
+				$('#salary').val("")
+
+			});
+		});
+    </script>
+</head>
+<body>
+<div class="outer">
+    <table>
+        <tbody>
+        <tr>
+            <th>姓名</th>
+            <th>邮件</th>
+            <th>薪资</th>
+            <th>操作</th>
+        </tr>
+        <tr>
+            <td>孙悟空</td>
+            <td>swk@hgs.com</td>
+            <td>10000</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+        <tr>
+            <td>猪八戒</td>
+            <td>zbj@glz.com</td>
+            <td>8000</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+        <tr>
+            <td>沙和尚</td>
+            <td>shs@lsh.com</td>
+            <td>6000</td>
+            <td><a href="javascript:;">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <form action="#">
+        <div>
+            <label for="name">姓名</label>
+            <input type="text" id="name"/>
+        </div>
+        <div>
+            <label for="email">邮件</label>
+            <input type="email" id="email"/>
+        </div>
+        <div>
+            <label for="salary">薪资</label>
+            <input type="number" id="salary"/>
+        </div>
+        <button>添加</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>本地存储</title>
+</head>
+<body>
+	<button id="btn01">存数据</button>
+	<button id="btn02">取数据</button>
+	<script>
+		const btn01 = document.getElementById('btn01');
+		const btn02 = document.getElementById('btn02');
+
+		btn01.onclick = () => {
+
+			//sessionStorage.setItem()  向游览器的会话存储空间存储数据
+			sessionStorage.setItem('name', '孙悟空');
+			sessionStorage.setItem('age', '18');
+			sessionStorage.setItem('gender', '男');
+			sessionStorage.setItem('address', '花果山');
+		};
+
+		btn02.onclick = () => {
+			//sessionStorage.getItem() 从游览器的会话存储空间中取数据
+			//sessionStorage.removeItem() 从游览器的会话存储空间中移除指定的数据
+			//sessionStorage.clear() 清除游览器的会话存储空间中的所有数据
+			//localStorage的所有方法和sessionStorage一样
+			const name = sessionStorage.getItem('name');
+			sessionStorage.removeItem('age');
+			sessionStorage.clear();
+			console.log(name);
+		};
+	</script>
+</body>
+</html>

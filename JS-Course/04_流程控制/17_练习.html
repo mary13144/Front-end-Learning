@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            编写代码，求100以内所有的质数
+        */
+
+        for(let i=2; i<100; i++){
+           
+            // 检查i是否是质数，是质数则输出
+            // 创建一个变量，记录i的状态，默认i是质数
+            let flag = true
+
+            // 获取 1-i 之间的数
+            for(let j=2; j<i; j++){
+                // 判断i能不能被j整除
+                if(i % j === 0){
+                    // 进入判断，说明i不是质数，修改flag为false
+                    flag = false
+                }
+            }
+
+            // 判断结果
+            if(flag){
+                console.log(i)
+            }
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

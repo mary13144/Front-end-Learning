@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">点我一下</button>
+	<button id="btn02">取消</button>
+	<button id="btn03">按钮3号</button>
+	<script>
+		const btn = document.getElementById('btn');
+		const btn02 = document.getElementById('btn02');
+		const btn03 = document.getElementById('btn03');
+		//创建一个中止控制器变量
+		let abortController;
+
+		btn.onclick = () => {
+			abortController = new AbortController();
+
+			fetch('http://localhost:3000/test', {
+				signal: abortController.signal
+			}).then(res => {
+
+			}).catch(err => {
+
+			});
+		};
+
+		btn02.onclick = () => {
+			abortController && abortController.abort();
+		};
+
+		btn03.onclick = async () => {
+			try {
+				const result = await fetch('http://localhost:3000/students');
+				const data = await result.json();
+				console.log(data);
+
+			} catch (e) {
+				console.log('出现错误', e);
+			}
+		};
+	</script>
+</body>
+</html>

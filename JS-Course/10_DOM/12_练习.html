@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .outer {
+                width: 400px;
+                margin: 100px auto;
+                text-align: center;
+            }
+
+            table {
+                width: 400px;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+            }
+
+            td,
+            th {
+                border: 1px black solid;
+                padding: 10px 0;
+            }
+
+            form div {
+                margin: 10px 0;
+            }
+        </style>
+
+        <!-- <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                /* 
+                    点击删除超链接后，删除当前的员工信息
+                */
+
+                function delEmpHandler() {
+                    // 本练习中的超链接，我们是不希望发生跳转，但是跳转行为是超链接的默认行为
+                    // 只要点击超链接就会触发页面的跳转，事件中可以通过取消默认行为来阻止超链接的跳转
+                    // 使用return false来取消默认行为，只在 xxx.xxx = function(){}这种形式绑定的事件中才适用
+                    // return false
+
+                    // 删除当前员工 删除当前超链接所在的tr
+                    // console.log(this)
+
+                    // this表示当前点击的超链接
+                    const tr = this.parentNode.parentNode
+
+                    // 获取要删除的员工的姓名
+                    // const empName = tr.getElementsByTagName("td")[0].textContent
+                    const empName = tr.firstElementChild.textContent
+
+                    // 弹出一个友好的提示
+                    if (confirm("确认要删除【" + empName + "】吗？")) {
+                        // 删除tr
+                        tr.remove()
+                    }
+                }
+
+                // 获取所有的超链接
+                const links = document.links
+                // 为他们绑定单级响应函数
+                for (let i = 0; i < links.length; i++) {
+                    links[i].onclick = delEmpHandler
+
+                    // links[i].addEventListener("click", function(){
+                    //     alert(123)
+                    //     return false // 无法取消默认行为
+                    // })
+                }
+                /* 
+                    点击按钮后，将用户的信息插入到表格中
+                */
+                // 获取tbody
+                const tbody = document.querySelector("tbody")
+                const btn = document.getElementById("btn")
+                btn.onclick = function () {
+                    // 获取用户输入的数据
+                    const name = document.getElementById("name").value
+                    const email = document.getElementById("email").value
+                    const salary = document.getElementById("salary").value
+
+                    // 将获取到的数据设置DOM对象
+                    /* 
+                        <tr>
+                            <td>孙悟空</td>
+                            <td>swk@hgs.com</td>
+                            <td>10000</td>
+                            <td><a href="javascript:;">删除</a></td>
+                        </tr>
+                    */
+
+                    // 这种写法，容易被xss的攻击
+                    tbody.insertAdjacentHTML(
+                        "beforeend",
+                        `
+                        <tr>
+                            <td>${name}</td>
+                            <td>${email}</td>
+                            <td>${salary}</td>
+                            <td><a href="javascript:;">删除</a></td>
+                        </tr>
+                    `
+                    )
+
+                    // 由于上边的超链接是新添加的，所以它的上边并没有绑定单级响应函数，所以新添加的员工无法删除
+                    // 解决方式：为新添加的超链接单独绑定响应函数
+                    links[links.length - 1].onclick = delEmpHandler
+
+                }
+            })
+        </script> -->
+
+        <script>
+            window.onload = function(){
+                // 删除功能
+                let delinfo = function(){
+                    const tr = this.parentElement.parentElement;
+                    const name = tr.firstElementChild.innerHTML;
+                    if (confirm(`你确认想删除${name}?`)) {
+                        tr.remove();
+                    }   
+                    return false;
+                }
+
+                const links = document.links;
+                // console.log(links);
+                for (const link of links) {
+                    link.onclick = delinfo;
+                }
+
+                //添加功能
+                const btn = document.getElementsByTagName('button')[0];
+                const tbody = document.getElementsByTagName("tbody")[0];
+
+                btn.onclick = function(){
+                    const name = document.getElementById("name").value;
+                    const email = document.getElementById('email').value;
+                    const salary = document.getElementById("salary").value;
+                    // tbody.insertAdjacentHTML('beforeend',
+                    //     `
+                    //     <tr>
+                    //         <td>${name}</td>
+                    //         <td>${email}</td>
+                    //         <td>${salary}</td>
+                    //         <td><a href="javascript:;">删除</a></td>
+                    //     </tr>
+                    //     `
+                    // );
+
+
+                    // 解决xss注入问题
+                    const tr = document.createElement('tr');
+                    const nameTd = document.createElement('td');
+                    const emailTd = document.createElement('td');
+                    const salaryTd = document.createElement('td');
+
+                    nameTd.innerText = name;
+                    emailTd.innerText = email;
+                    salaryTd.innerText = salary;
+
+                    tr.appendChild(nameTd);
+                    tr.appendChild(emailTd);
+                    tr.appendChild(salaryTd);
+                    tr.insertAdjacentHTML('beforeend','<td><a href="javascript:;">删除</a></td>');
+
+                    tbody.appendChild(tr);
+                    
+                    // 由于上边的超链接是新添加的，所以它的上边并没有绑定单级响应函数，所以新添加的员工无法删除
+                    // 解决方式：为新添加的超链接单独绑定响应函数
+                    links[links.length-1].onclick = delinfo;
+                    return false;
+                }
+
+
+            }
+        </script>
+    </head>
+    <body>
+        <div class="outer">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>姓名</th>
+                        <th>邮件</th>
+                        <th>薪资</th>
+                        <th>操作</th>
+                    </tr>
+                    <tr>
+                        <td>孙悟空</td>
+                        <td>swk@hgs.com</td>
+                        <td>10000</td>
+                        <td><a href="javascript:;">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td>猪八戒</td>
+                        <td>zbj@glz.com</td>
+                        <td>8000</td>
+                        <td><a href="javascript:;">删除</a></td>
+                    </tr>
+                    <tr>
+                        <td>沙和尚</td>
+                        <td>shs@lsh.com</td>
+                        <td>6000</td>
+                        <td><a href="javascript:;">删除</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <form action="#">
+                <div>
+                    <label for="name">姓名</label>
+                    <input type="text" id="name" />
+                </div>
+                <div>
+                    <label for="email">邮件</label>
+                    <input type="email" id="email" />
+                </div>
+                <div>
+                    <label for="salary">薪资</label>
+                    <input type="number" id="salary" />
+                </div>
+                <button>添加</button>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./fontaswesome/css/all.css">
+
+    <style>
+        .outer{
+            width: 240px;
+            margin: 100px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+
+        /* 设置图片 */
+        .img-warpper img{
+            width: 100%;
+            vertical-align: bottom;
+        }
+
+        .info{
+            padding: 15px 18px;
+        }
+
+        .info .title{
+            color: #717171;
+            font-size: 18px;
+        }
+
+
+        .category{
+            padding: 15px 0 20px 0;
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+
+        .category span{
+            margin-left: 4px;
+            margin-right: 6px;
+        }
+
+        .info p{
+            color: #aaaaaa;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        .evaluate{
+            height: 20px;
+            border-top: 1px solid #e9e9e9 ;
+            padding: 13px 32px 13px 15px;
+            color: #ddd;
+        }
+
+        .evaluate .star{
+            float: left;
+        }
+
+        .evaluate .light{
+            color: #b9cb41;
+        }
+
+        .evaluate a{
+            float: right;
+            color: #ddd;
+        }
+
+        a:hover{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <!-- 创建外层容器 -->
+    <div class="outer">
+
+        <!-- 创建图片容器 -->
+        <div class="img-warpper">
+            <img src="./img/10/10.jpg" alt="">
+        </div>
+
+        <!-- 创建内容容器 -->
+        <div class="info">
+            <h2 class="title">
+                动画电影
+            </h2>
+
+            <h3 class="category">
+                <span class="fab fa-twitch"></span>
+                动画
+            </h3>
+
+            <p class="introduce">
+                这是一部迪士尼的动画电影，内容引人入胜，非常好看！
+            </p>
+        </div>
+
+        <!-- 创建评分容器 -->
+        <div class="evaluate">
+            <!-- 评分显示 -->
+            <ul class="star">
+                <li class="fas fa-star light"></li>
+                <li class="fas fa-star light"></li>
+                <li class="fas fa-star light"></li>
+                <li class="fas fa-star-half light"></li>
+                <li class="fas fa-star"></li>
+            </ul>
+
+            <!-- 创建分享按钮 -->
+            <a href="javascript:;" class="fab fa-facebook"></a>
+            <!-- <a href="javascript:;" class="fab fa-weibo"></a> -->
+        </div>
+    </div>
+</body>
+</html>

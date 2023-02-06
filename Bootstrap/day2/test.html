@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 500px;
+            position: relative;
+            margin: 100px auto;
+        }
+
+        .test {
+            width: 500px;
+            height: 2px;
+            background: red;
+            position: absolute;
+            top: 50%;
+            margin-top: -1px;
+        }
+
+        img {
+            /*垂直对齐方式*/
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <img src="1.jpg" alt="">
+    <div class="test"></div>
+</div>
+</body>
+</html>

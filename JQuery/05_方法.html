@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <script src="./scripts/jquery-3.6.1.js"></script>
+    <script>
+		$(function () {
+
+			$('#list li:nth-child(1)').click(function () {
+				alert('孙悟空');
+			});
+
+			/*
+                clone() 用来复制jQuery对象
+            */
+			var $swk = $('#list li:nth-child(1)').clone(true);
+			var $list2 = $('#list2');
+
+
+			$('#btn').click(function () {
+				$list2.append($swk);
+			});
+		});
+
+    </script>
+</head>
+<body>
+
+<button id="btn">点我</button>
+
+<hr>
+
+<ul id="list">
+    <li>孙悟空</li>
+    <li>猪八戒</li>
+</ul>
+
+<ul id="list2">
+    <li>沙和尚</li>
+    <li>唐僧</li>
+</ul>
+</body>
+</html>

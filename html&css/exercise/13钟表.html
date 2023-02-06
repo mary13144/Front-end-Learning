@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .clock{
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background-image: url('./img/13/bg.png');
+            background-size: contain;
+            margin: 0 auto;
+            margin-top: 100px;
+            position: relative;
+        }
+
+        .clock>div{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .hour-wrapper{
+            width: 60%;
+            height: 60%;
+            /* background-color: #bfa; */
+            animation: clock_run 216000s linear infinite;
+        }
+
+        .hour{
+            height: 50%;
+            width: 8px;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        .minute-wrapper{
+            width: 80%;
+            height: 80%;
+            /* background-color: #bfa; */
+            animation: clock_run 3600s linear infinite;
+        }
+
+        .minute{
+            height: 50%;
+            width: 6px;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        .second-wrapper{
+            width: 90%;
+            height: 90%;
+            /* background-color: #bfa; */
+            animation: clock_run 60s steps(60) infinite;
+        }
+
+        .second{
+            height: 50%;
+            width: 4px;
+            background-color: red;
+            margin: 0 auto;
+        }
+
+        @keyframes clock_run {
+            from{
+                transform: rotateZ(0);
+            }
+
+            to{
+                transform: rotateZ(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <!-- 时针 -->
+        <div class="hour-wrapper">
+            <div class="hour"></div>
+        </div>
+
+        <!-- 分针 -->
+        <div class="minute-wrapper">
+            <div class="minute"></div>
+        </div>
+
+        <!-- 秒针 -->
+        <div class="second-wrapper">
+            <div class="second"></div>
+        </div>
+    </div>
+</body>
+</html>

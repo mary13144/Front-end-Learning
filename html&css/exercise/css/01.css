@@ -1,0 +1,14 @@
+body{
+    background-color: bisque;
+}
+.box1{
+    width: 190px;
+    height: 470px;
+    background-color: #f4f4f4;
+}
+.box2:not(:last-child){
+    margin-bottom: 10px;
+}
+img{
+    width:190px;
+}

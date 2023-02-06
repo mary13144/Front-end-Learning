@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            /* 
+                re.exec()
+                    - 获取字符串中符合正则表达式的内容
+            */
+        //    let str = "abcaecafcacc"
+
+           // 提取出str中符合axc格式的内容
+        
+           // g表示全局匹配
+        //    let re = /a(([a-z])c)/ig
+
+        //    let result = re.exec(str)
+
+        //    console.log(result)
+
+
+            // while(result){
+            //     console.log(result[0], result[1], result[2])
+            //     result = re.exec(str)
+            // }
+
+            /* 
+                dajsdh13715678903jasdlakdkjg13457890657djashdjka13811678908sdadadasd
+            
+            */
+
+
+            let str = 'dajsdh13715678903jasdlakdkjg13457890657djashdjka13811678908sdadadasd';
+            let reg = /(1[3-9]\d)\d{4}(\d{4})/g;
+
+            let result = reg.exec(str);
+            while(result){
+                console.log(result[1]+'****'+result[2]);
+                result = reg.exec(str);
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

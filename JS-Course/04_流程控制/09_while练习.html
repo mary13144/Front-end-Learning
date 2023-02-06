@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        /* 
+            练习：
+                假设银行存款的年利率为5%，问1000块存多少年可以变成5000块
+        
+        */
+
+        // 创建一个变量表示钱数
+        // let money = 1000
+
+        // 1000 存一年是多少钱？
+        // money *= 1.05
+        // money *= 1.05
+        // money *= 1.05
+
+        // 创建一个计数器来记录循环执行的次数
+        // let year = 0
+
+        // 编写循环，计算存款的年数
+        // while(money < 5000){
+        //     money *= 1.05 // 循环没执行一次，就相当于钱存了一年
+        //     year++
+        // }
+        
+        // console.log(`需要存${year}年，最终的钱数为${money}元！`)
+
+        // *******************************************
+
+        let moneystart = 1000;
+
+
+        let yearstart = 0;
+
+        while(moneystart<5000){
+            moneystart*=1.05;
+            yearstart++;
+        }
+        
+        alert(`需要存${yearstart}年，最终的钱数为${moneystart}元！`);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

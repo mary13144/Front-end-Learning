@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bootstrap demo</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+	      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<style>
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        tr, td {
+            border: black solid 1px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        caption {
+            font-size: 30px;
+            font-weight: bold;
+        }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- Content here -->
+		<form>
+			<div class="alert alert-dark" role="alert">
+				用户登陆
+			</div>
+			<h2 id="info"></h2>
+			<div class="mb-3">
+				<label class="form-label">Username:</label>
+				<input type="text" class="form-control" placeholder="Username" id="username">
+				<div class="form-text">We'll never share your information with anyone else.</div>
+			</div>
+			<div class="mb-3">
+				<label class="form-label">Password:</label>
+				<input type="password" class="form-control" placeholder="Password" id="password">
+			</div>
+			<!--			<div class="mb-3 form-check">-->
+			<!--				<input type="checkbox" class="form-check-input">-->
+			<!--				<label class="form-check-label">Check me out</label>-->
+			<!--			</div>-->
+			<button type="button" class="btn btn-primary float-end" id="btn-login">Submit</button>
+		</form>
+
+		<div id="root"></div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+	        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	<script>
+		const btn = document.getElementById('btn-login');
+		const info = document.getElementById('info');
+		const form = document.getElementsByTagName('form')[0];
+		const root = document.getElementById('root');
+		const container = document.getElementsByClassName('container')[0];
+
+		function getdata() {
+			form.remove();
+			// info.remove();
+			const button = document.createElement('button');
+			container.insertAdjacentElement('afterbegin', button);
+			container.insertAdjacentElement('afterbegin', document.createElement('hr'));
+			const h1 = document.createElement('h1');
+			container.insertAdjacentElement('afterbegin', h1);
+			h1.innerText = `登陆成功，欢迎${localStorage.getItem('nickname')}`;
+			button.textContent = '点击加载数据';
+			button.onclick = () => {
+				fetch('http://localhost:3000/students')
+					.then(res => {
+						console.log(res);
+						//判断响应的状态
+						if (res.status === 200) {
+							//获得响应中的json字段
+							return res.json();
+						} else {
+							throw new Error('未知错误');
+						}
+					})
+					.then(res => {
+						//将响应返回的数据渲染到页面
+						console.log(res);
+						if (res.state === 'ok') {
+							//创建表格
+							const table = document.createElement('table');
+							root.append(table);
+							table.insertAdjacentHTML('beforeend',
+								`
+								<thead>
+									<caption>学生列表</caption>
+									<tr>
+										<th>学号</th>
+										<th>姓名</th>
+										<th>年龄</th>
+										<th>性别</th>
+										<th>地址</th>
+									</tr>
+								</thead>
+								`
+							);
+							const tbody = document.createElement('tbody');
+							table.append(tbody);
+							for (let stu of res.data) {
+								tbody.insertAdjacentHTML('beforeend',
+									`
+								<tr>
+									<td>${stu.id}</td>
+									<td>${stu.name}</td>
+									<td>${stu.age}</td>
+									<td>${stu.gender}</td>
+									<td>${stu.address}</td>
+								</tr>
+								`);
+							}
+						} else {
+							console.log(res.status);
+						}
+					})
+					.catch(err => {
+						console.log('出现错误');
+					});
+			};
+
+		}
+
+		//判断用户是否处于登陆状态
+		if (localStorage.getItem('userId')) {
+			getdata();
+		} else {
+			btn.onclick = () => {
+				//获取用户输入的用户名和密码
+				const username = document.getElementById('username').value.trim();
+				const password = document.getElementById('password').value.trim();
+
+				fetch('http://localhost:3000/login', {
+					method: 'post',
+					headers: {
+						'Content-type': 'application/json'
+					},
+					body: JSON.stringify({
+						username,
+						password
+					})
+				})
+					.then(res => {
+						//判断响应状态
+						if (res.status === 200) {
+							return res.json();
+						} else {
+							throw new Error('出现未知错误，请重新登陆');
+						}
+					})
+					.then(res => {
+						if (res.state === 'ok') {
+
+							/*
+								登陆成功以后，需要保持用户的登陆状态，需要将用户的信息保存在本地
+									所谓的本地存储就是将用户信息存储到游览器自身的存储空间
+										可以将用户的数据存储到游览器内部
+
+										sessionStorage 存储时间比较短，一般页面关闭就失效
+										localStorage    存储时间比较长，只要不删除就不会失效
+							 */
+
+
+							//登陆成功
+							// console.log(res.data);
+							localStorage.setItem('userId', res.data.id);
+							localStorage.setItem('username', res.data.username);
+							localStorage.setItem('nickname', res.data.nickname);
+
+							getdata();
+						}
+					})
+					.catch(e => {
+						// console.log(e);
+						info.innerText = '用户名或密码错误！';
+					});
+
+			};
+		}
+
+
+	</script>
+</body>
+</html>

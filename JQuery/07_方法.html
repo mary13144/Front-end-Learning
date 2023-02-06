@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #box1 {
+                width: 200px;
+                height: 200px;
+                background-color: #bfa;
+            }
+
+            #box2 {
+                width: 100px;
+                height: 100px;
+                background-color: orange;
+            }
+
+            #box3 {
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+            }
+        </style>
+        <script src="./scripts/jquery-3.6.1.js"></script>
+        <script>
+            $(function () {
+                /* 
+                    append()
+                        - 向父元素后边添加一个子元素
+                    appendTo()
+                        - 将子元素添加到父元素后边
+                    prepend()
+                    prependTo()
+                        - 向父元素的前边添加子元素
+                    text()
+                        - 获取/设置元素的文本内容
+                    html()
+                        - 获取/设置元素的html代码
+                        
+                */
+                $("#btn").click(function () {
+
+                    // $("#box1").append("<div id='box2'/>")
+
+                    // $("<div id='box2'/>").appendTo("#box1")
+
+                    // $("#box1").prepend("<div id='box2'/>")
+                    $("<div id='box2'/>").prependTo("#box1")
+
+
+
+
+
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="btn">点我</button>
+        <hr />
+
+        <div id="box1">
+            <div id="box3"></div>
+        </div>
+    </body>
+</html>

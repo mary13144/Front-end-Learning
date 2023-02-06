@@ -1,0 +1,34 @@
+.img-list{
+    width: 590px;
+    height: 470px;
+    position: relative;
+    margin: 100px auto;
+}
+
+.img-list li{
+    position: absolute;
+}
+
+.radius-a{
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    z-index: 2;
+}
+
+.radius-a a{
+    border-radius: 50%;
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin-right: 4px;
+    border: 2px solid transparent;
+    background-color: rgba(255,255,255,0.4);
+    background-clip: content-box;
+    
+}
+
+.radius-a a:hover{
+    background-color: #fff;
+    border: 2px rgba(255,255,255,0.4) solid;
+}

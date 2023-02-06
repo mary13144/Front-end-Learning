@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let obj = Object()
+
+        /* 
+            属性名
+                - 通常属性名就是一个字符串，所以属性名可以是任何值，没有什么特殊要求
+                    但是如果你的属性名太特殊了，不能直接使用，需要使用[]来设置
+                    虽然如此，但是我们还是强烈建议属性名也按照标识符的规范命名
+
+                - 也可以使用符号（symbol）作为属性名，来添加属性
+                    获取这种属性时，也必须使用symbol
+                  使用symbol添加的属性，通常是那些不希望被外界访问的属性
+
+                - 使用[]去操作属性时，可以使用变量
+
+            属性值
+                - 对象的属性值可以是任意的数据类型，也可以是一个对象
+
+            使用typeof检查一个对象时，会返回object
+        */
+
+        obj.name = "孙悟空"
+        // obj.if = "哈哈" // 不建议
+        // obj.let = "嘻嘻"// 不建议
+        // obj["1231312@#@!#!#!"] = "呵呵"// 不建议
+
+        // let mySymbol = Symbol()
+        // let newSymbol = Symbol()
+        // // 使用symbol作为属性名
+        // obj[mySymbol] = "通过symbol添加的属性"
+        // console.log(obj[mySymbol])
+
+
+        obj.age = 18
+        obj["gender"] = "男"
+
+        let str = "address"
+
+        obj[str] = "花果山" // 等价于 obj["address"] = "花果山"
+
+        obj.str = "哈哈" // 使用.的形式添加属性时，不能使用变量
+
+        obj.a = 123
+        obj.b = 'hello'
+        obj.c = true
+        obj.d = 123n
+        obj.f = Object()
+        obj.f.name = "猪八戒"
+        obj.f.age = 28
+        // console.log(obj.f.name)
+        
+
+        // console.log(obj.gender)
+        // console.log(obj["gender"])
+        
+
+        // console.log(typeof obj)
+
+        /* 
+            in 运算符
+                - 用来检查对象中是否含有某个属性
+                - 语法 属性名 in obj
+                - 如果有返回true，没有返回false
+        */
+        console.log("name" in obj)
+        
+        // ***********************************************
+        let test = new Object();
+        test.name = 'xby';
+        test.age = 22;
+
+        let key = Symbol();
+
+        test[key] = '破防';
+        let key2 = 'adress';
+
+        test[key2] = '123';
+
+        test.key2 = 123
+
+        console.log(test);
+
+        
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

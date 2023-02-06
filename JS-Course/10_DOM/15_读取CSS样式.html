@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .box1 {
+                height: 200px;
+                background-color: #bfa;
+            }
+
+            .box1::before {
+                content: "hello";
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn">点我一下</button>
+
+        <hr />
+
+        <div class="box1"></div>
+
+        <script>
+            /* 
+                点击按钮后，读取元素的css样式
+            */
+
+            const btn = document.getElementById("btn")
+            const box1 = document.querySelector(".box1")
+
+            btn.onclick = function () {
+                /* 
+                    getComputedStyle()
+                        - 它会返回一个对象，这个对象中包含了当前元素所有的生效的样式
+                        - 参数：
+                            1. 要获取样式的对象
+                            2. 要获取的伪元素
+                        - 返回值：
+                            返回的一个对象，对象中存储了当前元素的样式
+
+                        - 注意：
+                            样式对象中返回的样式值，不一定能来拿来直接计算
+                                所以使用时，一定要确保值是可以计算的才去计算
+                */
+                const styleObj = getComputedStyle(box1)
+
+                console.log(styleObj.width)
+                console.log(styleObj.left)
+
+                // console.log(parseInt(styleObj.width) + 100)
+                // box1.style.width = parseInt(styleObj.width) + 100 + "px"
+
+                // console.log(styleObj.backgroundColor)
+
+                const beforeStyle = getComputedStyle(box1, "::before")
+                // console.log(beforeStyle.color)
+
+                console.log(box1.firstElementChild)
+            }
+        </script>
+    </body>
+</html>

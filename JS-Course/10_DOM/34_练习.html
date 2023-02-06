@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			img {
+				vertical-align: top;
+			}
+
+			.outer {
+				margin: 50px auto;
+				width: 640px;
+				height: 390px;
+				position: relative;
+			}
+
+			.outer li {
+				list-style-type: none;
+				position: absolute;
+				opacity: 0;
+				transition: opacity 1s;
+			}
+
+			.outer .current {
+				opacity: 1;
+				z-index: 9;
+			}
+
+			.outer .pointer {
+				position: absolute;
+				right: 30px;
+				bottom: 20px;
+				z-index: 999;
+			}
+
+			.outer .pointer a {
+				float: left;
+				width: 6px;
+				height: 6px;
+				background-color: rgba(0, 0, 0, 0.4);
+				border: 2px solid rgba(255, 255, 255, 0.4);
+				border-radius: 50%;
+				margin-left: 6px;
+			}
+
+			.outer .pointer a:hover {
+				background-color: rgba(255, 255, 255, 0.4);
+				border-color: rgba(0, 0, 0, 0.4);
+			}
+
+			.outer .pointer .current-pointer {
+				background-color: rgba(255, 255, 255, 0.4);
+				border-color: rgba(0, 0, 0, 0.4);
+			}
+			.outer .prev-next a {
+				position: absolute;
+				width: 41px;
+				height: 69px;
+				top: 0;
+				bottom: 0;
+				margin: auto 0;
+				background-image: url("./images/icon-slides.png");
+				z-index: 999;
+			}
+
+			#prev {
+				left: 0;
+				background-position: -84px 0;
+			}
+
+			#prev:hover {
+				background-position: 0px 0;
+			}
+
+			#next {
+				right: 0;
+				background-position: -125px 0;
+			}
+
+			#next:hover {
+				background-position: -42px 0;
+			}
+		</style>
+
+		<script>
+			window.onload = function () {
+				// 函数闭包
+				const autoChange = (function () {
+					let timer = null;
+
+					return () => {
+						if (timer === null) {
+							timer = setTimeout(function autonext() {
+								changeImg("next");
+								timer = setTimeout(autonext, 3000);
+							}, 3000);
+						} else {
+							clearTimeout(timer);
+							timer = null;
+						}
+					};
+				})();
+
+				autoChange();
+
+				const outer = document.getElementsByClassName("outer")[0];
+
+				outer.onmouseenter = () => {
+					autoChange();
+				};
+
+				outer.onmouseleave = () => {
+					autoChange();
+				};
+
+				const pointer = document.getElementsByClassName("pointer")[0];
+				const arraypointer = Array.from(document.querySelectorAll(".pointer a"));
+
+				pointer.onclick = function (event) {
+					let child = event.target;
+					let index = arraypointer.indexOf(child);
+					if (index != -1) {
+						changeImg(index);
+					}
+				};
+
+				const prevBtn = document.getElementById("prev");
+				const nextBtn = document.getElementById("next");
+
+				prevBtn.onclick = () => {
+					changeImg("prev");
+				};
+
+				nextBtn.onclick = () => {
+					changeImg("next");
+				};
+
+				function changeImg(direction) {
+					const current = document.getElementsByClassName("current")[0];
+					let target;
+					const currentpointer = document.getElementsByClassName("current-pointer")[0];
+					let targetpointer;
+
+					if (direction === "prev") {
+						target = current.previousElementSibling || document.getElementsByTagName("li")[4];
+						targetpointer = currentpointer.previousElementSibling || document.querySelector(".pointer a:last-child");
+					} else if (direction === "next") {
+						target = current.nextElementSibling || document.getElementsByTagName("li")[0];
+						targetpointer = currentpointer.nextElementSibling || document.querySelector(".pointer a:first-child");
+					}else{
+						target = current.parentElement.children[direction];
+						targetpointer = currentpointer.parentElement.children[direction];
+					}
+
+					current.classList.remove("current");
+					target.classList.add("current");
+					currentpointer.classList.remove("current-pointer");
+					targetpointer.classList.add("current-pointer");
+				}
+			};
+		</script>
+	</head>
+	<body>
+		<div class="outer">
+			<ul>
+				<li class="current">
+					<a href="javascript:;">
+						<img src="./images/1.png" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="./images/2.png" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="./images/3.png" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="./images/4.png" />
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<img src="./images/5.png" />
+					</a>
+				</li>
+			</ul>
+
+			<div class="pointer">
+				<a href="javascript:;" class="current-pointer"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+				<a href="javascript:;"></a>
+			</div>
+
+			<div class="prev-next">
+				<a href="javascript:;" id="prev"></a>
+				<a href="javascript:;" id="next"></a>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>属性选择器</title>
+    <style>
+        /* 
+           [属性名]{}
+           作用：选择具有指定属性的标签
+           [属性名=xxx]{}(xxx如果是数字开头需要有双引号)
+           作用：选择具有指定属性且属性值为xxx的标签
+           [属性名^=xxx]{}
+           作用：选择属性指定属性且属性值以xxx开头的标签
+           [属性名$=xxx]{}
+           作用：选择属性指定属性且属性值以xxx结尾的标签
+           [属性名*=xxx]{}
+           作用：选择属性指定属性且属性值中含有xxx的标签
+        */
+        p[title]{
+            color: cyan;
+        }
+        /* p[title=abc]{
+            font-size: 50px;
+        } */
+        /* p[title^=a]{
+            font-size: 30px;
+        } */
+        /* p[title$=c]{
+            font-size: 30px;
+        } */
+        p[title*=b]{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <p title="abc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus expedita atque beatae? Doloremque optio maxime a aliquid placeat nesciunt eligendi facilis suscipit ex corrupti dolores fuga, officia, maiores est ut!</p>
+    <p title="2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur molestias quod dolore vel voluptate. Veritatis distinctio iusto eveniet! Architecto facere reprehenderit tempora saepe consectetur aliquam sunt non debitis maiores dicta.</p>
+    <p title="3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur molestias quod dolore vel voluptate. Veritatis distinctio iusto eveniet! Architecto facere reprehenderit tempora saepe consectetur aliquam sunt non debitis maiores dicta.</p>
+    <p title="4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur molestias quod dolore vel voluptate. Veritatis distinctio iusto eveniet! Architecto facere reprehenderit tempora saepe consectetur aliquam sunt non debitis maiores dicta.</p>
+    <p title="5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur molestias quod dolore vel voluptate. Veritatis distinctio iusto eveniet! Architecto facere reprehenderit tempora saepe consectetur aliquam sunt non debitis maiores dicta.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur molestias quod dolore vel voluptate. Veritatis distinctio iusto eveniet! Architecto facere reprehenderit tempora saepe consectetur aliquam sunt non debitis maiores dicta.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur molestias quod dolore vel voluptate. Veritatis distinctio iusto eveniet! Architecto facere reprehenderit tempora saepe consectetur aliquam sunt non debitis maiores dicta.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur molestias quod dolore vel voluptate. Veritatis distinctio iusto eveniet! Architecto facere reprehenderit tempora saepe consectetur aliquam sunt non debitis maiores dicta.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur molestias quod dolore vel voluptate. Veritatis distinctio iusto eveniet! Architecto facere reprehenderit tempora saepe consectetur aliquam sunt non debitis maiores dicta.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur molestias quod dolore vel voluptate. Veritatis distinctio iusto eveniet! Architecto facere reprehenderit tempora saepe consectetur aliquam sunt non debitis maiores dicta.</p>
+</body>
+</html>

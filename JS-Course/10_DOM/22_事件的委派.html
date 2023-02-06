@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <button id="btn">点我一下</button>
+
+        <hr />
+
+        <ul id="list">
+            <li><a href="javascript:;">链接一</a></li>
+            <li><a href="javascript:;">链接二</a></li>
+            <li><a href="javascript:;">链接三</a></li>
+            <li><a href="javascript:;">链接四</a></li>
+        </ul>
+
+        <script>
+            /* 
+                我一个希望：
+                    只绑定一次事件，既可以让所有的超链接，包括当前的和未来新建的超链接都具有这些事件
+
+                思路：
+                    可以将事件统一绑定给document，这样点击超链接时由于事件的冒泡，
+                        会导致document上的点击事件被触发，这样只绑定一次，所有的超链接都会具有这些事件
+            */
+
+            const links = document.querySelectorAll("ul a")
+            const list = document.getElementById("list")
+            const btn = document.getElementById("btn")
+
+            document.addEventListener("click", (event) => {
+                alert(event.target.textContent)
+            })
+
+            // 点击按钮后，在ul中添加一个新的li
+            btn.addEventListener("click", () => {
+                list.insertAdjacentHTML(
+                    "beforeend",
+                    "<li><a href='javascript:;'>新超链接</a></li>"
+                )
+            })
+        </script>
+    </body>
+</html>

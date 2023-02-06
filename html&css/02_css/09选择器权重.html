@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>选择器权重</title>
+    <style>
+        /* 
+           选择器权重：
+               内敛样式  1，0，0，0
+               id选择器  0，1，0，0  
+               类,属性和伪类选择器  0，0，1，0
+               元素选择器  0，0，0，1
+               通配选择器  0，0，0，0
+               继承样式  没有权重
+            *注意：交集选择器选择的权重指数是相加的，并集则是分类计算的，同时选择器的优先级是不能越级的下一级无论怎么相加
+            都无法超越上一级的优先级，如果加上!important那么自动变为最高优先级（超过内敛样式）
+        */
+        .di{
+            background-color: darkcyan !important;
+        }
+
+        div.di{
+            background-color: darkblue;
+        }
+
+        #adc{
+            background-color: darkorange;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="di">
+        我是一个div
+        <p id="adc">我是div中的p元素</p>
+    </div>
+
+    <div class="box">
+
+    </div>
+</body>
+</html>

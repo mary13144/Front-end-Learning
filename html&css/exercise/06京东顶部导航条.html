@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>京东</title>
+    <!-- 引入重置样式表 -->
+    <link rel="stylesheet" href="./css/reset.css" />
+    <!-- 引入图标 -->
+    <link rel="stylesheet" href="./fontaswesome/css/all.min.css" />
+
+
+    <style>
+      /* 解决高度塌陷问题 */
+      .clearfix::before,
+      .clearfix::after{
+        content: '';
+        display: table;
+        clear: both;
+      }
+
+      /* 设置字体样式 */
+      body{
+        font: 12px/150% tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\u5b8b\u4f53",sans-serif;
+      }
+
+      /* 设置外围容器样式 */
+      .top-bar-wrapper{
+        width: 100%;
+        background-color: #E3E4E5;
+        height: 30px;
+        border-bottom: 1px #ddd solid;
+        line-height: 30px;
+      }
+
+       /* 设置内部容器样式 */
+      .top-bar{
+        /* 设置固定宽度 */
+        width: 1200px;
+        /* 设置水平居中 */
+        margin: 0 auto;
+        /* background-color: red; */
+
+      }
+
+      /* 设置字体颜色 */
+      .top-bar a,
+      .top-bar span,
+      .top-bar i{
+        color: #999;
+        text-decoration: none;
+      }
+
+      /* 设置鼠标移入样式 */
+      .top-bar a:hover{
+        color: #f10215;
+      }
+
+      /* 设置左侧标签样式 */
+      .location{
+        float: left;
+      }
+
+      /* 位置样式 */
+      .location .current_city{
+        /* height: 30.667px; */
+        padding: 0 24px 0 9px;
+        border: 1px solid transparent;
+        border-bottom: none;
+        position: relative;
+        z-index: 1000;
+      }
+
+      /* 位置鼠标移入样式 */
+      .location:hover .current_city{
+        /* height: 30.667px; */
+        padding: 0 24px 0 9px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom: none;
+      }
+
+      /* 位置下拉菜单样式 */
+      .location .city_list{
+        width: 301px;
+        height: 422px;
+        margin: 0;
+        padding: 10px 0px 10px 10px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        top: 30px;
+        display: none;
+        z-index: 999;
+      }
+
+      .ui_list{
+        line-height: 24px;
+      }
+
+      .item{
+        float: left;
+        width: 60px;
+        padding: 2px 0;
+      }
+
+      .item a{
+        float: left;
+        padding: 0 8px;
+      }
+
+
+      .item a:hover{
+        background-color: #f4f4f4;
+        color: #f30213;
+      }
+
+      /* 位置下拉菜单鼠标移入样式 */
+      .location:hover .city_list{
+        display: block;
+      }
+
+      /* 位置标签样式 */
+      .location .fas{
+        font-size: 14px;
+        color: #f10125;
+      }
+
+      /* 设置右侧标签样式 */
+      .shortcut{
+        float: right;
+      }
+
+
+      /* 设置分隔栏样式 */
+      .shortcut .fore{
+        padding: 0px 10px;
+      }
+
+      /* 设置分割线样式 */
+      .shortcut .line{
+        width: 1px;
+        height: 12px;
+        padding: 0px;
+        margin-top: 9px;
+        background-color: #ccc;
+        overflow: hidden;
+      }
+
+      .shortcut .highlight{
+        color: #f10125;
+      }
+      
+      .shortcut li{
+        float: left;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <!-- 创建外围容器 -->
+    <div class="top-bar-wrapper">
+      <!-- 创建内部容器 -->
+      <div class="top-bar clearfix">
+        <!-- 创建左侧位置标签 -->
+        <div class="location">
+          <div class="current_city">
+            <i class="fas fa-map-marker-alt"></i>
+            <a href="javascript:;">北京</a>
+          </div>
+
+          <div class="city_list">
+            <div class="ui_list clearfix">
+              <div class="item">
+                <a href="javascript:;">北京</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">上海</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">天津</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">重庆</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">河北</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">山西</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">河南</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">辽宁</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">吉林</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">黑龙江</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">内蒙古</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">江苏</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">山东</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">安徽</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">浙江</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">福建</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">湖北</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">湖南</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">广东</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">广西</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">江西</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">四川</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">海南</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">贵州</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">云南</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">西藏</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">陕西</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">甘肃</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">青海</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">宁夏</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">新疆</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">港澳</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">台湾</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">钓鱼岛</a>
+              </div>
+              <div class="item">
+                <a href="javascript:;">海外</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 创建右侧下拉菜单 -->
+        <ul class="shortcut">
+          <li class="fore">
+            <a href="javascript:;">你好，请登录</a>
+            &nbsp;
+            <a class="highlight" href="javascript:;">免费注册</a>
+          </li>
+          <!-- 分割线 -->
+          <li class="line"></li>
+          <li class="fore"><a href="javascript:;">我的订单</a></li>
+          
+          <li class="line"></li>
+          <li class="fore">
+            <a href="javascript:;">我的京东</a>
+            <i class="fas fa-angle-down"></i>
+          </li>
+
+          <li class="line"></li>
+          <li class="fore"><a href="javascript:;">京东会员</a></li>
+
+          <li class="line"></li>
+          <li class="fore">
+            <a href="javascript:;">企业采购</a>
+            <i class="fas fa-angle-down"></i>
+          </li>
+
+          <li class="line"></li>
+          <li class="fore">
+            <span>客户服务</span>
+            <i class="fas fa-angle-down"></i>
+          </li>
+
+          <li class="line"></li>
+          <li class="fore">
+            <span>网站导航</span>
+            <i class="fas fa-angle-down"></i>
+          </li>
+
+          <li class="line"></li>
+          <li class="fore"><a href="javascript:;">手机京东</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

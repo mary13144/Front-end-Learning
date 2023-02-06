@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if-else</title>
+    <script>
+        /* 
+            if-else语句
+            - 语法：
+                if(条件表达式){
+                    语句...
+                }else{
+                    语句...
+                }
+
+            - 执行流程：
+                if-else执行时，先对条件表达式进行求值判断，
+                    如果结果为true 则执行if后的语句
+                    如果结果为false 则执行else后的语句
+
+            if-else if-else语句：
+            - 语法：
+                if(条件表达式){
+                    语句...
+                }else if(条件表达式){
+                    语句...
+                }else if(条件表达式){
+                    语句...
+                }else if(条件表达式){
+                    语句...
+                }else{
+                    语句...
+                }
+            - 执行流程：
+                if-else if-else语句，会自上向下依次对if后的条件表达式进行求值判断，
+                    如果条件表达式结果为true，则执行当前if后的语句，执行完毕语句结束
+                    如果条件表达式结果为false，则继续向下判断，直到找到true为止
+                    如果所有的条件表达式都是false，则执行else后的语句
+
+                注意：
+                    if-else if-else语句中只会有一个代码块被执行，
+                        一旦有执行的代码块，下边的条件都不会在继续判断了
+                        所以一定要注意，条件的编写顺序
+
+        */
+
+        let age = 10
+
+        // if(age >= 60){
+        //     alert('你已经退休了！')
+        // }else{
+        //     alert('你还没有退休！')
+        // }
+
+        age = 200
+
+        // if(age >= 100){
+        //     alert('你真是一个长寿的人！')
+        // }else if(age >= 80){
+        //     alert('你比楼上那位还年轻不小！')
+        // }else if(age >= 60 ){
+        //     alert('你已经退休了！')
+        // }else if(age >= 30){
+        //     alert('你已经步入中年了！')
+        // }else if(age >= 18){
+        //     alert('你已经成年了！')
+        // }else{
+        //     alert('你还未成年！')
+        // }
+
+        age = 62
+
+        // if(age >= 18 && age < 30){
+        //     alert('你已经成年了！')
+        // }else if(age >= 30 && age < 60){
+        //     alert('你已经步入中年了！')
+        // }else if(age >= 60){
+        //     alert('你已经退休了！')
+        // }
+
+        /* 
+            - 练习1：
+            编写一个程序，获取一个用户输入的整数。然后通过程序显示这个数是奇数还是偶数。
+
+
+            - 练习2：
+            从键盘输入小明的期末成绩:
+                    当成绩为100时，'奖励一辆BMW'
+                    当成绩为[80-99]时，'奖励一台iphone'
+                    当成绩为[60-79]时，'奖励一本参考书'
+                    其他时，什么奖励也没有
+
+            - 练习3：
+            大家都知道，男大当婚，女大当嫁。那么女方家长要嫁女儿，当然要提出一定的条件：
+                高：180cm以上; 富:1000万以上; 帅:500以上;
+                如果这三个条件同时满足，则:'我一定要嫁给他'
+                如果三个条件有为真的情况，则:'嫁吧，比上不足，比下有余。'
+                如果三个条件都不满足，则:'不嫁！'
+        
+        */
+
+        // prompt() 可以用来获取用户输入的内容
+        // 它会将用户输入的内容以字符串的形式返回，可以通过变量来接收
+        let num = +prompt("请输入一个整数：")
+
+        alert(typeof num)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

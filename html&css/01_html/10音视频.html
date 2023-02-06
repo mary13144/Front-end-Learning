@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音视频</title>
+</head>
+<body>
+    <!-- 
+        audio标签用来引入一个外部的音视频文件
+        音频文件引入时默认不允许用户控制音视频的播放
+            src：用于指定引入的音频文件地址
+            controls：是否允许用户控制播放
+            autoplay：设置自动播放音乐(很多游览器不支持)
+            loop:循环播放
+        vedio和audio使用方式基本一样
+     -->
+    <!-- <audio src="../obj_wo3DlMOGwrbDjj7DisKw_11054585138_5b5b_39e6_d386_9148108e4435e0a248232549d95330ab.mp3" autoplay loop controls>ghos</audio> -->
+
+    <!-- 除了src可以指定音频文件地址之外，source也可以指定音频文件地址 -->
+    <audio controls autoplay>
+        对不起您的游览器不支持该播放器请升级您的游览器版本
+        <source src="/obj_wo3DlMOGwrbDjj7DisKw_11054585138_5b5b_39e6_d386_9148108e4435e0a248232549d95330ab.mp3">
+    </audio>
+
+    <!-- 可以直接粘贴视频网站的分享链接，但是仅支持非vip视频 -->
+    <!-- <iframe frameborder="0" width="700px" height="500px" src="https://v.qq.com/txp/iframe/player.html?vid=v0040llot3b" allowFullScreen="true"></iframe> -->
+</body>
+</html>

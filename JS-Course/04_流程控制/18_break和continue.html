@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            /* 
+            break和continue
+                - break
+                    - break用来终止switch和循环语句
+                    - break执行后，当前的switch或循环会立刻停止
+                    - break会终止离他最近的循环
+
+                - continue
+                    - continue用来跳过当次循环
+        */
+
+            for (let i = 0; i < 5; i++) {
+                console.log(i)
+
+                for (let j = 0; j < 5; j++) {
+                    if (j === 1) continue
+                    console.log("内层循环--->", j)
+                }
+            }
+
+            // for (let i = 0; i < 5; i++) {
+            //     if (i === 3) {
+            //         continue
+            //     }
+            //     console.log(i)
+            // }
+
+            // for (let i = 0; i < 5; i++) {
+            //     console.log(i)
+
+            //     for(let j=0; j<5; j++){
+            //         if(j === 1) break
+            //         console.log('内层循环--->', j)
+            //     }
+            // }
+
+            // for (let i = 0; i < 5; i++) {
+            //     if(i === 3){
+            //         break
+            //     }
+            //     console.log(i)
+            // }
+        </script>
+    </head>
+    <body></body>
+</html>

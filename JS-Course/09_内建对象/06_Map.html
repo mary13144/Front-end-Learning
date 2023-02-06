@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            /*  */
+
+            const map = new Map()
+
+            map.set("name", "孙悟空")
+            map.set("age", 18)
+            map.set({}, "呵呵")
+
+            // 将map转换为数组
+            // const arr = Array.from(map) // [["name","孙悟空"],["age",18]]
+            // const arr = [...map]
+
+            // console.log(arr)
+
+            const map2 = new Map([
+                ["name", "猪八戒"],
+                ["age", 18],
+                [{}, () => {}],
+            ])
+
+            // console.log(map2)
+
+            // 遍历map
+            // for (const [key, value] of map) {
+            //     // const [key, value] = entry
+            //     console.log(key, value)
+            // }
+
+            // map.forEach((key, value)=>{
+            //     console.log(key, value)
+            // })
+            
+            /* 
+                map.keys() - 获取map的所有的key
+                map.values() - 获取map的所有的value
+            */
+
+            for(const key of map.keys()){
+                console.log(key)
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

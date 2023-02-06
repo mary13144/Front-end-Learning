@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>类型检查</title>
+        <script>
+            let a = 10
+            let b = 10n
+
+            // console.log(a)
+            // console.log(b)
+
+            /* 
+                typeof 运算符
+                    - typeof用来检查不同的值的类型
+                    - 它会根据不同的值返回不同的结果
+            */
+           console.log(typeof a) // "number"
+           console.log(typeof b) // "bigint"
+
+           a = '猪八戒';
+           str = `你好，${a}`;
+           console.log(str);
+           
+        </script>
+    </head>
+    <body></body>
+</html>

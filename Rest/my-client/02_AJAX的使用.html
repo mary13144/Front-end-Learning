@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>AJAX测试</h1>
+	<hr>
+	<button id="btn">点我加载数据</button>
+	<div id="root"></div>
+	<script>
+		const btn = document.getElementById('btn');
+		const root = document.getElementById('root');
+		btn.onclick = () => {
+
+			//创建一个xhr对象
+			const xhr = new XMLHttpRequest();
+
+			//设置xhr响应体的类型，xhr会自动将返回类型转换为对象
+			xhr.responseType = 'json';
+
+			//为xhr绑定一个事件
+			xhr.onload = () => {
+				//xhr.response  表示响应信息
+
+				//读取返回信息前做一个判断,状态码200表示成功
+				if (xhr.status === 200) {
+					//读取xhr的返回信息之前将信息转换成对象
+					// const stulist = JSON.parse(xhr.response);
+					// console.log(stulist.data);
+
+					// console.log(xhr.response.data);
+
+					//获取返回的数据
+					const result = xhr.response;
+					//判断返回数据的状态:
+					if (result.state === 'ok') {
+						//创建一个ul
+						const ul = document.createElement('ul');
+						for (let stu of result.data) {
+							const li = document.createElement('li');
+							li.innerText = `${stu.name} - ${stu.age} - ${stu.gender} - ${stu.address}`;
+							ul.append(li);
+						}
+						root.append(ul);
+					}
+				}
+			};
+
+
+			//设置请求信息
+			xhr.open('GET', 'http://localhost:3000/students');
+			//发送请求
+			xhr.send();
+		};
+	</script>
+</body>
+</html>

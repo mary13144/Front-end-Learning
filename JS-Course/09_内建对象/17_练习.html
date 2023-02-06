@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script>
+            /* 
+                dajsdh13715678903jasdlakdkjg13457890657djashdjka13811678908sdadadasd
+
+                用自己的语言来把描述出来
+                    1    3         501789087
+                    1    3到9之间   任意数字 x 9
+            
+            */
+
+            let re = /1[3-9]\d{9}/g
+
+            re = /(1[3-9]\d)\d{4}(\d{4})/g
+
+            let str =
+                "dajsdh13715678903jasdlakdkjg13457890657djashdjka13811678908sdadadasd"
+
+            let result
+
+            while (result = re.exec(str)) {
+                // console.log(result[0], result[1], result[2])
+                console.log(result[1]+"****"+result[2])
+            }
+
+
+            re = /^1[3-9]\d{9}$/
+
+            console.log(re.test("13456789042"))
+        </script>
+    </head>
+    <body></body>
+</html>
