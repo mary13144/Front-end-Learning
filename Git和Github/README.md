@@ -40,6 +40,8 @@
      ```bash
      git add <filename> 将文件切换到暂存的状态
      git add * 将所有已修改（未跟踪）的文件暂存
+     git add . 会把本地所有untrack的文件都加入暂存区，并且会根据.gitignore做过滤
+     git add * 会忽略.gitignore把任何文件都加入
      ```
 
    - 暂存 → 未修改

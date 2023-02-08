@@ -10,7 +10,8 @@
 	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
-	<script>
+	<div id="root"></div>
+	<script type="text/babel">
 		/*
 			{}中不能写语句，只能写表达式
 				但是可以在语句中写JSX
@@ -19,10 +20,46 @@
 		const lang = 'en'
 		let div;
 		if (lang === 'en') {
-			div = <div>hello world</div>
+			div = <div>Hello World</div>;
 		} else {
-			div = <div>你好，世界</div>
+			div = <div>你好，世界</div>;
 		}
+
+		let data = ['孙悟空','猪八戒','沙和尚','唐僧'];
+
+		//JSX会自动将数组中的每个元素在页面中渲染出来
+		// const list = <ul>{data}</ul>
+
+		/*
+			希望达到一个效果：
+				<ul>
+					<li>孙悟空</li>
+					<li>猪八戒</li>
+					<li>沙和尚</li>
+					<li>唐僧</li>
+				</ul>
+		 */
+		// data = data.map(item => <li>{item}</li>)
+		//
+		// const list = <ul>{data}</ul>
+
+		// const list = <ul>
+		// 	{
+		// 		data.map(item=><li>{item}</li>)
+		// 	}
+		// </ul>
+
+		const list = <ul>
+			{
+				data.map((item,index)=><li key={index}>{item}</li>)
+			}
+			</ul>
+
+		// 获取元素对应的react元素
+		const root = ReactDOM.createRoot(document.getElementById('root'));
+		// 渲染react元素
+		// root.render(div);
+		root.render(list);
 	</script>
 </body>
 </html>
