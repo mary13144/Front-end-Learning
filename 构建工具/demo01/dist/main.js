@@ -1,0 +1,1 @@
+(()=>{"use strict";const t={test(){console.log("你好！webpack")}};({test(){window.onload=()=>{const t=document.createElement("h1");t.textContent="你好！webpack",document.body.append(t)}}}).test(),t.test()})();
