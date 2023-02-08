@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4ddc1a08-7ad0-43ac-a439-e18f5fb2917a" name="变更" comment="更新文件">
+      <change beforePath="$PROJECT_DIR$/React/Hello World/04_渲染列表.html" beforeDir="false" afterPath="$PROJECT_DIR$/React/Hello World/04_渲染列表.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Nodejs/01_node简介/07_自定义Promise/01_MyPromise.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Nodejs/01_node简介/07_自定义Promise/02_MyPromise.js" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/Nodejs/05_yarn/package.json" />
+    <dismissed value="$PROJECT_DIR$/Nodejs/14_express/package.json" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2KXPEZugC9Kyzx5PBjxgUgXErcK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;19.4.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.11.18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/前端学习/LeetCode/TIME&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;web-ide.project.structure&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;E:\\Software\\WebStorm 2022.2.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\前端学习\LeetCode\TIME" />
+      <recent name="D:\前端学习\构建工具\demo03" />
+      <recent name="D:\前端学习\构建工具\demo02" />
+      <recent name="D:\前端学习\Git和Github" />
+      <recent name="D:\前端学习\Rest\my-client" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\前端学习\LeetCode\TIME" />
+      <recent name="D:\前端学习\Rest\my-client" />
+      <recent name="D:\前端学习\Nodejs\01_node简介" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.axios.html">
+    <configuration name="axios.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/前端学习/Rest/my-client/axios.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/前端学习/构建工具/demo01/dist/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js (2)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Nodejs/14_express/index.js" working-dir="$PROJECT_DIR$/Nodejs/14_express">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.js (3)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Rest/my-server/index.js" working-dir="$PROJECT_DIR$/Rest/my-server">
+      <method v="2" />
+    </configuration>
+    <configuration name="jwtdemo.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/Rest/my-server/jwtdemo.js" working-dir="$PROJECT_DIR$/Rest/my-server">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.jwtdemo.js" />
+        <item itemvalue="Node.js.index.js (3)" />
+        <item itemvalue="Node.js.index.js (2)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="4ddc1a08-7ad0-43ac-a439-e18f5fb2917a" name="变更" comment="" />
+      <created>1674117844798</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1674117844798</updated>
+      <workItem from="1674117846694" duration="26000" />
+      <workItem from="1674117879766" duration="5916000" />
+      <workItem from="1674291333749" duration="3106000" />
+      <workItem from="1674560715267" duration="3731000" />
+      <workItem from="1674619129223" duration="8247000" />
+      <workItem from="1674641522927" duration="6649000" />
+      <workItem from="1674721291398" duration="7182000" />
+      <workItem from="1674805153384" duration="7989000" />
+      <workItem from="1674883606884" duration="2657000" />
+      <workItem from="1674963857536" duration="11818000" />
+      <workItem from="1674998274373" duration="3241000" />
+      <workItem from="1675009755126" duration="1890000" />
+      <workItem from="1675050717608" duration="4969000" />
+      <workItem from="1675084968527" duration="7341000" />
+      <workItem from="1675136792516" duration="7584000" />
+      <workItem from="1675176964532" duration="9811000" />
+      <workItem from="1675228501989" duration="9704000" />
+      <workItem from="1675259626468" duration="9339000" />
+      <workItem from="1675309178403" duration="592000" />
+      <workItem from="1675324999851" duration="6289000" />
+      <workItem from="1675350791661" duration="3157000" />
+      <workItem from="1675395034104" duration="22871000" />
+      <workItem from="1675481823974" duration="20955000" />
+      <workItem from="1675573446037" duration="808000" />
+      <workItem from="1675574547965" duration="4554000" />
+      <workItem from="1675599665773" duration="4972000" />
+      <workItem from="1675684997645" duration="388000" />
+      <workItem from="1675685395866" duration="162000" />
+      <workItem from="1675744137801" duration="3567000" />
+      <workItem from="1675748207991" duration="2631000" />
+      <workItem from="1675752304084" duration="260000" />
+      <workItem from="1675752574886" duration="17000" />
+      <workItem from="1675752600172" duration="250000" />
+      <workItem from="1675752860424" duration="51000" />
+      <workItem from="1675752920131" duration="260000" />
+      <workItem from="1675753192459" duration="67000" />
+      <workItem from="1675753266973" duration="27000" />
+      <workItem from="1675753301790" duration="5312000" />
+      <workItem from="1675824272991" duration="10869000" />
+      <workItem from="1675843159681" duration="292000" />
+    </task>
+    <task id="LOCAL-00001" summary="创建新文件">
+      <created>1675604610350</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675604610350</updated>
+    </task>
+    <task id="LOCAL-00002" summary="git文档">
+      <created>1675744380874</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675744380874</updated>
+    </task>
+    <task id="LOCAL-00003" summary="React">
+      <created>1675839346033</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675839346033</updated>
+    </task>
+    <task id="LOCAL-00004" summary="更新文件">
+      <created>1675842343447</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675842343447</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="创建新文件" />
+    <MESSAGE value="git文档" />
+    <MESSAGE value="React" />
+    <MESSAGE value="更新文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新文件" />
+  </component>
+</project>
