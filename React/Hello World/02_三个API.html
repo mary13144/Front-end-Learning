@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>三个API</title>
+	<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+	<div id="root"></div>
+	<script>
+		/*
+			React.createElement();
+				- 用来创建一个虚拟DOM
+				- 参数:
+					1. 元素的名称(html标签必须小写)
+					2. 标签的属性(对象)
+						设置事件时需要使用驼峰命名法
+						class属性需要使用className
+					3. 子节点(文本子节点或者虚拟DOM)
+			注意点:
+				React元素最终会通过虚拟DOM来转换为真实DOM
+				React元素是不可修改的，React只能创建新的元素来替换旧的元素
+				修改React的元素后，需要根元素进行重新渲染
+				    当调用render方法时，React会自动比较新旧两个虚拟DOM的区别，然后将区别更新到真实DOM中
+
+		 */
+
+		const button = React.createElement('button', {
+			id: 'btn', className: 'btn', onClick: () => {
+				alert('Hello World');
+			}
+		});
+		//获取根元素，根元素就是所有React元素插入的入口
+		const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
+		/*
+			root.render()
+				- 用来将React元素渲染到根元素
+				- 根元素中的所有元素都会被删除，然后重新渲染
+				- 当重复调用render方法时，React会自动比较新旧两个虚拟DOM的区别，然后将区别更新到真实DOM中（性能优化）
+		 */
+		root.render(button);
+		/*
+			老版本React中的写法
+			ReactDOM.render(button, document.getElementById('root'));
+		 */
+
+	</script>
+</body>
+</html>

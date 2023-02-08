@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>React初体验</title>
+	<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+	<div id="root"></div>
+	<script>
+
+		/*
+			React的作用就是用来替代原生的DOM操作
+		 */
+
+		/*
+			React.createElement()方法用来创建一个虚拟DOM
+				参数1：创建的元素的类型，字符串，表示元素的名称(组件名称或者HTML标签名称)
+				参数2：是一个对象或null，表示当前这个DOM元素的属性
+				参数3：子节点（包括其他虚拟DOM或文本子节点）
+		 */
+		const div = React.createElement('div', {}, 'Hello World');
+		// 获取元素对应的react元素
+		const root = ReactDOM.createRoot(document.getElementById('root'));
+		// 渲染react元素
+		root.render(div);
+
+	</script>
+</body>
+</html>
