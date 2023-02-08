@@ -5,8 +5,40 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
+	<div id="root"></div>
+	<script type="text/babel">
+		//命令式编程
+		// const button = React.createElement('button', {id: 'btn', type: 'button'}, '按钮');
 
+
+		//声明式编程，结果导向的编程
+		//可以通过JSX(JS扩展)语法来创建虚拟DOM，JSX需要被React解析
+		//JSX语法的本质是React.createElement()的语法糖
+		//如果要使用JSX语法，需要引入Babel来解析JSX语法
+		const button = <button>按钮</button>;
+
+		const root = ReactDOM.createRoot(document.getElementById('root'));
+
+		root.render(button);
+
+
+		/*
+			JSX的注意事项:
+				1.JSX不是字符串，不要使用引号包裹JSX
+				2.JSX中的html标签应该小写，React组件应该大写
+				3.JSX中表达式应该用{}包裹(有值的语句就是表达式，不能写语句)
+					如果表达式是NaN、undefined、null、false，那么不会显示
+				4.JSX中有且仅有一个根标签
+				5.JSX的标签必须闭合(自结束标签必须写上/)
+				6.JSX中可以直接设置属性，但是属性名必须使用驼峰命名法
+					class必须写成className
+					style必须写成style={{color: 'red'}}
+		 */
+	</script>
 </body>
 </html>
