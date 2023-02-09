@@ -1,0 +1,22 @@
+.date {
+    width: 90px;
+    background-color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+}
+
+.mouth {
+    height: 30px;
+    background-color: #d62828;
+    font-size: 20px;
+    line-height: 30px;
+    color: #fff;
+}
+
+.day {
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+}

@@ -1,0 +1,7 @@
+.item {
+    background-color: #FCBF49;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    margin: 16px 0;
+    padding: 6px;
+}
