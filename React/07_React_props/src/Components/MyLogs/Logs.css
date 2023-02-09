@@ -1,0 +1,8 @@
+.logs {
+    background-color: #EAE287;
+    width: 800px;
+    margin: 100px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    padding: 20px;
+}
