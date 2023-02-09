@@ -2,8 +2,10 @@ import React from 'react';
 import './Mydate.css';
 
 const Mydate = (props) => {
-	const month = props.date.toLocaleString('zh-CN', {month: 'long'})
-	const date = props.date.getDate()
+	console.log(props);
+	//props是一个只读属性
+	const month = props.date.toLocaleString('zh-CN', {month: 'long'});
+	const date = props.date.getDate();
 
 	return (
 		<div className="date">
