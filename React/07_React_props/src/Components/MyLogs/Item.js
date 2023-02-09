@@ -1,15 +1,18 @@
 import React from 'react';
-import Date from './Date';
+import Date from './Mydate';
 import Content from './Content';
 import './Item.css';
+import Mydate from './Mydate';
 
-const Item = () => {
+const Item = (props) => {
+
+	console.log(props);
 	return (
 		<div className="item">
 			{/*{左边日期容器}*/}
-			<Date/>
+			<Mydate date={props.date}/>
 			{/*{内容}*/}
-			<Content/>
+			<Content desc={props.desc} time={props.time}/>
 		</div>
 
 	);

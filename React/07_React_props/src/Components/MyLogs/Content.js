@@ -1,16 +1,20 @@
 import React from 'react';
 import './Content.css';
 
-const Content = () => {
+const Content = (props) => {
 	return (
 		<div className="content">
 			{/*{项目介绍}*/}
 			<h3 className="desc">
-				学习React
+				{
+					props.desc
+				}
 			</h3>
 			{/*{时间}*/}
 			<div className="time">
-				4h
+				{
+					props.time
+				}
 			</div>
 		</div>
 
