@@ -6,72 +6,72 @@
 
 2. 配置
 
-   1. 配置name和email
+    1. 配置name和email
 
-      ``` bash
-      git config --global user.name "xxxx"
-      git config --global user.email "xxx@xxx.xxx"
-      ```
+       ``` bash
+       git config --global user.name "xxxx"
+       git config --global user.email "xxx@xxx.xxx"
+       ```
 
 3. 使用git：
 
-   - 查看当前仓库的状态
+    - 查看当前仓库的状态
 
-     ```bash
-     git status
-     ```
+      ```bash
+      git status
+      ```
 
-   - 初始化仓库
+    - 初始化仓库
 
-     ```bash
-     git init
-     ```
+      ```bash
+      git init
+      ```
 
-   - 文件状态：
+    - 文件状态：
 
-     1. 未跟踪
-     2. 已跟踪
-     3. 暂存
-     4. 未修改
-     5. 已修改
+        1. 未跟踪
+        2. 已跟踪
+        3. 暂存
+        4. 未修改
+        5. 已修改
 
-   - 未跟踪 → 暂存
+    - 未跟踪 → 暂存
 
-     ```bash
-     git add <filename> 将文件切换到暂存的状态
-     git add * 将所有已修改（未跟踪）的文件暂存
-     git add . 会把本地所有untrack的文件都加入暂存区，并且会根据.gitignore做过滤
-     git add * 会忽略.gitignore把任何文件都加入
-     ```
+      ```bash
+      git add <filename> 将文件切换到暂存的状态
+      git add * 将所有已修改（未跟踪）的文件暂存
+      git add . 会把本地所有untrack的文件都加入暂存区，并且会根据.gitignore做过滤
+      git add * 会忽略.gitignore把任何文件都加入
+      ```
 
-   - 暂存 → 未修改
+    - 暂存 → 未修改
 
-     ```bash
-     git commit -m "xxxx" 将暂存的文件存储到仓库中
-     git commit -a -m "xxxx" 提交所有已修改的文件（未跟踪的文件不会提交）
-     ```
+      ```bash
+      git commit -m "xxxx" 将暂存的文件存储到仓库中
+      git commit -a -m "xxxx" 提交所有已修改的文件（未跟踪的文件不会提交）
+      ```
 
-   - 未修改 → 修改
+    - 未修改 → 修改
 
-     - 修改代码后，文件会变为修改状态
+        - 修改代码后，文件会变为修改状态
 
 4. 常用的命令
 
-   1. 重置文件
+    1. 重置文件
 
    ```bash
    git restore <filename> # 恢复文件
    git restore --staged <filename> # 取消暂存状态
    ```
 
-   2. 删除文件	
+    2. 删除文件
 
    ```bash
    git rm <filename> # 删除文件
    git rm <filename> -f # 强制删除
    ```
 
-   3. 移动文件
+    3. 移动文件
 
    ```bash
    git mv from to # 移动文件 重命名文件
@@ -91,28 +91,28 @@
    ```
 
    在开发中，都是在自己的分支上编写代码，代码编写完成后，在将自己的分支合并到主分支中。
-   
+
    ### 变基（rebase）
-   
+
    在开发中除了通过merge来合并分支外，还可以通过变基来完成分支的合并。
-   
+
    我们通过merge合并分支时，在提交记录中会将所有的分支创建和分支合并的过程全部都显示出来，这样当项目比较复杂，开发过程比较波折时，我必须要反复的创建、合并、删除分支。这样一来将会使得我们代码的提交记录变得极为混乱。
-   
+
    原理（变基时发生了什么）：
-   
-   1. 当我们发起变基时，git会首先找到两条分支的最近的共同祖先
-   2. 对比当前分支相对于祖先的历史提交，并且将它们提取出来存储到一个临时文件中
-   3. 将当前部分指向目标的基底
-   4. 以当前基底开始，重新执行历史操作
-   
+
+    1. 当我们发起变基时，git会首先找到两条分支的最近的共同祖先
+    2. 对比当前分支相对于祖先的历史提交，并且将它们提取出来存储到一个临时文件中
+    3. 将当前部分指向目标的基底
+    4. 以当前基底开始，重新执行历史操作
+
    变基和merge对于合并分支来说最终的结果是一样的！但是变基会使得代码的提交记录更整洁更清晰！注意！大部分情况下合并和变基是可以互换的，但是如果分支已经提交给了远程仓库，那么这时尽量不要变基。
-   
+
    ### 远程仓库（remote）
-   
+
    目前我对于git所有操作都是在本地进行的。在开发中显然不能这样的，这时我们就需要一个远程的git仓库。远程的git仓库和本地的本质没有什么区别，不同点在于远程的仓库可以被多人同时访问使用，方便我们协同开发。在实际工作中，git的服务器通常由公司搭建内部使用或是购买一些公共的私有git服务器。我们学习阶段，直接使用一些开放的公共git仓库。目前我们常用的库有两个：GitHub和Gitee（码云）
-   
+
    将本地库上传git：
-   
+
    ```bash
    git remote add origin https://github.com/lilichao/git-demo.git
    # git remote add <remote name> <url>
@@ -123,16 +123,16 @@
    git push -u origin main
    # git push 将代码上传服务器上
    ```
-   
+
    将本地库上传gitee：
-   
+
    ```bash
    git remote add gitee https://gitee.com/ymhold/vue-course.git
    git push -u gitee main
    ```
-   
+
    ### 远程库的操作的命令
-   
+
    ```bash
    git remote # 列出当前的关联的远程库
    git remote add <远程库名> <url> # 关联远程仓库
@@ -147,10 +147,10 @@
    git pull  # 从服务器上拉取代码并自动合并 
    
    ```
-   
+
    注意：推送代码之前，一定要先从远程库中拉取最新的代码
 
-	   ### 		tag 标签
+   ### tag 标签
 
 - 当头指针没有执行某个分支的头部时，这种状态我们称为分离头指针（HEAD detached），分离头指针的状态下也可以操作操作代码，但是这些操作不会出现在任何的分支上，所以注意不要再分离头指针的状态下来操作仓库。
 
@@ -174,51 +174,50 @@
 
   ### gitignore
 
-- 默认情况下，git会监视项目中所有内容，但是有些内容比如node_modules目录中的内容，我们不希望它被git所管理。我们可以在项目目录中添加一个`.gitignore`文件，来设置那些需要git忽略的文件。
+- 默认情况下，git会监视项目中所有内容，但是有些内容比如node_modules目录中的内容，我们不希望它被git所管理。我们可以在项目目录中添加一个`.gitignore`
+  文件，来设置那些需要git忽略的文件。
 
-### 	github的静态页面
+### github的静态页面
 
 - 在github中，可以将自己的静态页面之间部署到github中，它会给我们提供一个地址使得我们的页面变成一个真正的网站，可以供用户访问。
 - 要求：
-  - 静态页面的分支必须叫做：gh-pages
-  - 如果希望页面可以通过xxx.github.io访问，则需要将库的名字配置为xxx.github.io 
+    - 静态页面的分支必须叫做：gh-pages
+    - 如果希望页面可以通过xxx.github.io访问，则需要将库的名字配置为xxx.github.io
 
-### 	docusaurus
+### docusaurus
 
 - facebook推出的开源的静态的内容管理系统，通过它可以快速的部署一个静态网站
 
 - 使用：
 
-  - 网址：
+    - 网址：
 
-    - https://docusaurus.io/
+        - https://docusaurus.io/
 
-  - 安装
+    - 安装
 
-    - `npx create-docusaurus@latest my-website classic`
+        - `npx create-docusaurus@latest my-website classic`
 
-  - 启动项目
+    - 启动项目
 
-    - `npm start`或`yarn start`
+        - `npm start`或`yarn start`
 
-  - 构建项目
+    - 构建项目
 
-    - `npm run build`或`yarn build`
-    - 
+        - `npm run build`或`yarn build`
+        -
 
-  - 配置项目：
+    - 配置项目：
 
-    - docusaurus.config.js 项目的配置文件
+        - docusaurus.config.js 项目的配置文件
 
-  - 添加页面：
+    - 添加页面：
 
-    - 在docusaurus框架中，页面分成三种：1.page，2.blog，3.doc
+        - 在docusaurus框架中，页面分成三种：1.page，2.blog，3.doc
 
-  - 案例地址：
+    - 案例地址：
 
-    - https://github.com/lilichao/lilichao.github.io
-
-    
+        - https://github.com/lilichao/lilichao.github.io
 
 ## 第二部分 预备知识 —— 构建工具
 
@@ -229,10 +228,10 @@
 ### Webpack
 
 - 使用步骤：
-  1. 初始化项目`yarn init -y`
-  2. 安装依赖`webpack`、`webpack-cli`
-  3. 在项目中创建`src`目录，然后编写代码（index.js）
-  4. 执行`yarn webpack`来对代码进行打包（打包后观察dist目录）
+    1. 初始化项目`yarn init -y`
+    2. 安装依赖`webpack`、`webpack-cli`
+    3. 在项目中创建`src`目录，然后编写代码（index.js）
+    4. 执行`yarn webpack`来对代码进行打包（打包后观察dist目录）
 
 - 配置文件（webpack.config.js）
 
@@ -265,64 +264,64 @@
 
 - 使用步骤
 
-  1. 安装 `npm install -D babel-loader @babel/core @babel/preset-env`
+    1. 安装 `npm install -D babel-loader @babel/core @babel/preset-env`
 
-  2. 配置：
+    2. 配置：
 
-     ```javascript
-     module: {
-       rules: [
-         {
-           test: /\.m?js$/,
-           exclude: /(node_modules|bower_components)/,
-           use: {
-             loader: 'babel-loader',
-             options: {
-               presets: ['@babel/preset-env']
+       ```javascript
+       module: {
+         rules: [
+           {
+             test: /\.m?js$/,
+             exclude: /(node_modules|bower_components)/,
+             use: {
+               loader: 'babel-loader',
+               options: {
+                 presets: ['@babel/preset-env']
+               }
              }
            }
-         }
-       ]
-     }
-     ```
+         ]
+       }
+       ```
 
-  3. 在package.json中设置兼容列表
+    3. 在package.json中设置兼容列表
 
-     ```json
-     "browserslist": [
-             "defaults"
-      ]
-     ```
+       ```json
+       "browserslist": [
+               "defaults"
+        ]
+       ```
 
-     https://github.com/browserslist/browserslist
+       https://github.com/browserslist/browserslist
 
 - 插件（plugin）
 
-  - 插件用来为webpack来扩展功能
+    - 插件用来为webpack来扩展功能
 
-  - html-webpack-plugin
+    - html-webpack-plugin
 
-    - 这个插件可以在打包代码后，自动在打包目录生成html页面
+        - 这个插件可以在打包代码后，自动在打包目录生成html页面
 
-    - 使用步骤：
+        - 使用步骤：
 
-      1. 安装依赖
-      2. 配置插件
+            1. 安装依赖
+            2. 配置插件
 
-      ```javascript
-      plugins: [
-              new HTMLPlugin({
-                  // title: "Hello Webpack",
-                  template: "./src/index.html"
-              })
-          ]
-      ```
+          ```javascript
+          plugins: [
+                  new HTMLPlugin({
+                      // title: "Hello Webpack",
+                      template: "./src/index.html"
+                  })
+              ]
+          ```
 
 - 开发服务器（webpack-dev-server）
 
-  - 安装：
-    - `yarn add  -D webpack-dev-server`
-    - 启动：`yarn webpack serve --open`
+    - 安装：
+        - `yarn add -D webpack-dev-server`
+        - 启动：`yarn webpack serve --open`
 
 - `devtool:"inline-source-map"`配置源码的映射
 
@@ -332,24 +331,24 @@
 
 - 相较于webpack，vite采用了不同的运行方式：
 
-  - 开发时，并不对代码打包，而是直接采用ESM的方式来运行项目
-  - 在项目部署时，在对项目进行打包
+    - 开发时，并不对代码打包，而是直接采用ESM的方式来运行项目
+    - 在项目部署时，在对项目进行打包
 
 - 除了速度外，vite使用起来也更加方便
 
 - 基本使用：
 
-  1. 安装开发依赖 vite
+    1. 安装开发依赖 vite
 
-  2. vite的源码目录就是项目根目录
+    2. vite的源码目录就是项目根目录
 
-  3. 开发命令：
+    3. 开发命令：
 
-     vite 启动开发服务器
+       vite 启动开发服务器
 
-     vite build 打包代码
+       vite build 打包代码
 
-     vite preview 预览打包后代码
+       vite preview 预览打包后代码
 
 - 使用命令构建
 
@@ -376,8 +375,6 @@
   })
   ```
 
-  
-
 ## 第三部分 Vue
 
 ### vue
@@ -385,68 +382,66 @@
 - vue是一个前端的框架，主要负责帮助我们构建用户的界面
 - MVVM：Model - View - View Model
 - vue负责vm的工作（视图模型），通过vue可以将视图和模型相关联。
-  - 当模型发生变化时，视图会自动更新
-  - 也可以通过视图去操作模型
+    - 当模型发生变化时，视图会自动更新
+    - 也可以通过视图去操作模型
 - vue思想：
-  - 组件化开发
-  - 声明式的编程
+    - 组件化开发
+    - 声明式的编程
 
 ### HelloWorld
 
 1. 直接在网页中使用（像jQuery一样）
 
-   - `        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>`
+    - `        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>`
 
 2. 使用vite
 
-   - `yarn add vite -D`
+    - `yarn add vite -D`
 
 3. 代码：
 
    ```javascript
    // 组件，就是一个普通js对象
-   const App = {}
+   const FunctionApp = {}
    
    // 创建应用
-   const app = createApp(App)
+   const app = createApp(FunctionApp)
    
    // 挂载到页面
    app.mount("#root")
    ```
 
 4. 自动创建项目
-   - `npm init vue@latest`
-   - `yarn create vue`
-
-
+    - `npm init vue@latest`
+    - `yarn create vue`
 
 ## 网页的渲染
 
 - 浏览器在渲染页面时，做了那些事：
 
-  1. 加载页面的html和css（源码）
-  2. html转换为DOM，css转换为CSSOM
-  3. 将DOM和CSSOM构建成一课渲染树
-  4. 对渲染树进行reflow（回流、重排）（计算元素的位置）
-  5. 对网页进行绘制repaint（重绘）
+    1. 加载页面的html和css（源码）
+    2. html转换为DOM，css转换为CSSOM
+    3. 将DOM和CSSOM构建成一课渲染树
+    4. 对渲染树进行reflow（回流、重排）（计算元素的位置）
+    5. 对网页进行绘制repaint（重绘）
 
 - 渲染树（Render Tree）
 
-  - 从根元素开始检查那些元素可见，以及他们的样式
-  - 忽略那些不可见的元素（display:none）
+    - 从根元素开始检查那些元素可见，以及他们的样式
+    - 忽略那些不可见的元素（display:none）
 
 - 重排、回流
 
-  - 计算渲染树中元素的大小和位置
-  - 当页面中的元素的大小或位置发生变化时，便会触发页面的重排（回流）
-  - width、height、margin、font-size ......
-  - 注意：每次修改这类样式都会触发一次重排！所以如果分词修改多个样式会触发重排多次，而重排是非常耗费系统资源的操作（昂贵），重排次数过多后，会导致网页的显示性能变差，在开发时我们应该尽量的减少重排的次数
-  - 在现代的前端框架中，这些东西都已经被框架优化过了！所以使用vue、react这些框架这些框架开发时，几乎不需要考虑这些问题，唯独需要注意的时，尽量减少在框架中直接操作DOM
+    - 计算渲染树中元素的大小和位置
+    - 当页面中的元素的大小或位置发生变化时，便会触发页面的重排（回流）
+    - width、height、margin、font-size ......
+    - 注意：每次修改这类样式都会触发一次重排！所以如果分词修改多个样式会触发重排多次，而重排是非常耗费系统资源的操作（昂贵），重排次数过多后，会导致网页的显示性能变差，在开发时我们应该尽量的减少重排的次数
+    - 在现代的前端框架中，这些东西都已经被框架优化过了！所以使用vue、react这些框架这些框架开发时，几乎不需要考虑这些问题，唯独需要注意的时，尽量减少在框架中直接操作DOM
 
 - 重绘
 
-  - 绘制页面
-  - 当页面发生变化时，浏览器就会对页面进行重新的绘制
+    - 绘制页面
+    - 当页面发生变化时，浏览器就会对页面进行重新的绘制
 
 - 例子：
 
