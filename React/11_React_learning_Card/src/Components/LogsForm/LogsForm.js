@@ -12,23 +12,41 @@ const MyComponent = () => {
 	// let inputDate;
 	// let inputDesc;
 	// let inputTime;
-	let [inputDate, setinputDate] = useState('');
-	let [inputDesc, setinputDesc] = useState('');
-	let [inputTime, setinputTime] = useState('');
+	// let [inputDate, setinputDate] = useState('');
+	// let [inputDesc, setinputDesc] = useState('');
+	// let [inputTime, setinputTime] = useState('');
+
+	let [formDate, setformDate] = useState({
+		inputDate: '',
+		inputDesc: '',
+		inputTime: ''
+	});
 
 	//获取用户在表单中输入的数据
 	const inputDateHandler = (e) => {
 		// inputDate = e.target.value;
-		setinputDate(e.target.value);
+		// setinputDate(e.target.value);
+		setformDate({
+			...formDate,
+			inputDate: e.target.value
+		});
 	};
 	const inputDescHandler = (e) => {
 		// inputDesc = e.target.value;
-		setinputDesc(e.target.value);
+		// setinputDesc(e.target.value);
+		setformDate({
+			...formDate,
+			inputDesc: e.target.value
+		});
 	};
 
 	const inputTimeHandler = (e) => {
 		// inputTime = e.target.value;
-		setinputTime(e.target.value);
+		// setinputTime(e.target.value);
+		setformDate({
+			...formDate,
+			inputTime: e.target.value
+		});
 	};
 
 
@@ -44,13 +62,18 @@ const MyComponent = () => {
 		e.preventDefault();
 		//将获取到的数据整合为一个对象
 		const newlog = {
-			date: new Date(inputDate),
-			desc: inputDesc,
-			time: +inputTime
+			date: new Date(formDate.inputDate),
+			desc: formDate.inputDesc,
+			time: +formDate.inputTime
 		};
-		setinputDate('');
-		setinputDesc('');
-		setinputTime('');
+		// setinputDate('');
+		// setinputDesc('');
+		// setinputTime('');
+		setformDate({
+			inputDate: '',
+			inputDesc: '',
+			inputTime: ''
+		});
 
 
 		console.log(newlog);
@@ -60,15 +83,15 @@ const MyComponent = () => {
 			<form onSubmit={formSubmit}>
 				<div className={'form-item'}>
 					<label htmlFor={'date'}>日期:</label>
-					<input onChange={inputDateHandler} id={'date'} value={inputDate} type="date"/>
+					<input onChange={inputDateHandler} id={'date'} value={formDate.inputDate} type="date"/>
 				</div>
 				<div className={'form-item'}>
 					<label htmlFor={'desc'}>内容:</label>
-					<input onChange={inputDescHandler} id={'desc'} value={inputDesc} type="text"/>
+					<input onChange={inputDescHandler} id={'desc'} value={formDate.inputDesc} type="text"/>
 				</div>
 				<div className={'form-item'}>
 					<label htmlFor={'time'}>时长:</label>
-					<input onChange={inputTimeHandler} id={'time'} value={inputTime} type="number"/>
+					<input onChange={inputTimeHandler} id={'time'} value={formDate.inputTime} type="number"/>
 				</div>
 				<div className={'form-button'}>
 					<button>添加</button>
