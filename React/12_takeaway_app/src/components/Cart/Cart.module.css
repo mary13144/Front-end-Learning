@@ -1,0 +1,72 @@
+.Cart {
+    display: flex;
+    justify-content: space-between;
+    width: 680rem;
+    height: 80rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    position: fixed;
+    bottom: 30rem;
+    background-color: #333333;
+    border-radius: 50rem;
+    z-index: 9999;
+}
+
+
+.CartBag {
+    width: 80rem;
+    position: absolute;
+    bottom: -15rem;
+
+}
+
+.CartBag img {
+    width: 100%;
+}
+
+.CartCount {
+    position: absolute;
+    background-color: #f00;
+    width: 36rem;
+    height: 36rem;
+    border-radius: 50%;
+    color: #ffffff;
+    line-height: 35rem;
+    font-weight: bold;
+    font-size: 25rem;
+    text-align: center;
+    right: -15rem;
+}
+
+.CartPrice, .noMeals {
+    display: flex;
+    align-items: center;
+    font-size: 36rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-left: 120rem;
+}
+
+.CartPrice::before {
+    content: '￥';
+    font-size: 24rem;
+}
+
+.noMeals {
+    color: #aaaaaa;
+    font-size: 30rem;
+}
+
+.CartButton {
+    border: none;
+    width: 160rem;
+    border-radius: 50rem;
+    background-color: #FCBF49;
+    font-size: 30rem;
+}
+
+.disabled {
+    background-color: #696969;
+    color: #aaaaaa;
+}

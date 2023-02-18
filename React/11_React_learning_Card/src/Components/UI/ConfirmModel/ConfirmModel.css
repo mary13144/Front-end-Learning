@@ -1,0 +1,47 @@
+.ConfirmModel {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    left: 0;
+    right: 0;
+    top: -400px;
+    bottom: 0;
+    margin: auto;
+    padding: 40px;
+    background-color: #bbffaa;
+    border: white 5px solid;
+}
+
+.confirmText {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+}
+
+.ConfirmModel button {
+    margin: 50px 20px;
+    float: right;
+    width: 50px;
+    height: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #3F3F3F;
+    font-weight: bold;
+    border: none;
+}
+
+#yes {
+    background-color: red;
+}
+
+.ConfirmModel button:hover {
+    background-color: #ffffff;
+    color: #3F3F3F;
+}
+
+#yes:hover {
+    background-color: #ffffff;
+    color: red;
+}
