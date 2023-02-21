@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import Meals from './components/Meals/Meals';
 import CartContext from './store/cart-context';
 import FilterMeals from './components/FilterMeals/FilterMeals';
@@ -53,9 +53,69 @@ const MEALS_DATA = [
 		img: '/img/meals/7.png'
 	}
 ];
+
+const goodsDataHandler = (prestate, action) => {
+	let newPrestate = {...prestate};
+	switch (action.type) {
+		case 'ADD': {
+			/*
+				向购物车中添加商品
+					首先判断商品是否存在
+			 */
+			if (newPrestate.item.indexOf(action.meal) === -1) {
+				newPrestate.item.push(action.meal);
+				//初始化该商品数量
+				action.meal.count = 1;
+			} else {
+				action.meal.count += 1;
+			}
+
+			//增加购物车商品总数
+			newPrestate.totalCount += 1;
+			//增加购物车商品总价格
+			newPrestate.totalPrices += action.meal.price;
+
+			//重新设置state
+			return newPrestate;
+		}
+		case 'DEL': {
+			action.meal.count -= 1;
+			if (action.meal.count === 0) {
+				newPrestate.item.splice(newPrestate.item.indexOf(action.meal), 1);
+			}
+
+			newPrestate.totalCount -= 1;
+			newPrestate.totalPrices -= action.meal.price;
+
+			return newPrestate;
+		}
+		case 'Clear': {
+			prestate.item.forEach(item => {
+				delete item.count;
+			});
+			return {
+				item: [],
+				totalCount: 0,
+				totalPrices: 0
+			};
+		}
+		default: {
+			return prestate;
+		}
+	}
+};
+
+
 const App = () => {
 	//创建存储数据的state
 	const [mealsData, setmealData] = useState(MEALS_DATA);
+
+	//使用reducer
+	const [goodsData, goodsDataDispatch] = useReducer(goodsDataHandler, {
+		item: [],
+		totalCount: 0,
+		totalPrices: 0
+	});
 
 	/*
 		创建state用来存储购物车的商品
@@ -63,7 +123,7 @@ const App = () => {
 			2. totalCount 商品总的数量
 			3. totalPrices 商品总的价格
 	 */
-	const [goodsData, setgoodsData] = useState({
+	/*const [goodsData, setgoodsData] = useState({
 		item: [],
 		totalCount: 0,
 		totalPrices: 0
@@ -72,10 +132,10 @@ const App = () => {
 	//添加商品
 	const addmealHandler = (meal) => {
 		let newgoodsData = {...goodsData};
-		/*
+		/!*
 			向购物车中添加商品
 				首先判断商品是否存在
-		 */
+		 *!/
 		if (newgoodsData.item.indexOf(meal) === -1) {
 			newgoodsData.item.push(meal);
 			//初始化该商品数量
@@ -117,7 +177,7 @@ const App = () => {
 			totalCount: 0,
 			totalPrices: 0
 		});
-	};
+	};*/
 
 	//搜索
 	const searchMeals = (keyword) => {
@@ -129,7 +189,7 @@ const App = () => {
 	};
 
 	return (
-		<CartContext.Provider value={{...goodsData, addmel: addmealHandler, delmel: delmealHandler, ClearCart}}>
+		<CartContext.Provider value={{...goodsData, goodsDataDispatch}}>
 			<div>
 				<FilterMeals searchMeals={searchMeals}/>
 				<Meals mealsData={mealsData}/>

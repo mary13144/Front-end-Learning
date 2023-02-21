@@ -1,43 +1,47 @@
 @font-face {
-  font-family: "iconfont"; /* Project id 3307279 */
-  src: url('iconfont.woff2?t=1676635399374') format('woff2'),
-       url('iconfont.woff?t=1676635399374') format('woff'),
-       url('iconfont.ttf?t=1676635399374') format('truetype');
+    font-family: "iconfont"; /* Project id 3307279 */
+    src: url('iconfont.woff2?t=1676700347990') format('woff2'),
+    url('iconfont.woff?t=1676700347990') format('woff'),
+    url('iconfont.ttf?t=1676700347990') format('truetype');
 }
 
 .iconfont {
-  font-family: "iconfont" !important;
-  font-size: 16px;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "iconfont" !important;
+    /*font-size: 16px;*/
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cuowu:before {
+    content: "\e600";
 }
 
 .icon-lajitong:before {
-  content: "\e661";
+    content: "\e661";
 }
 
 .icon-sousuoleimu:before {
-  content: "\e754";
+    content: "\e754";
 }
 
 .icon-sousuo:before {
-  content: "\e8ba";
+    content: "\e8ba";
 }
 
 .icon-jiahao1:before {
-  content: "\e721";
+    content: "\e721";
 }
 
 .icon-jianhao:before {
-  content: "\e60a";
+    content: "\e60a";
 }
 
 .icon-jiahao:before {
-  content: "\eaf3";
+    content: "\eaf3";
 }
 
 .icon-jianhao1:before {
-  content: "\e603";
+    content: "\e603";
 }
 

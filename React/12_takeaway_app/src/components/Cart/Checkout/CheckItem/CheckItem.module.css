@@ -1,0 +1,36 @@
+.ChickItem {
+    display: flex;
+}
+
+.ChickItemImg {
+    width: 150rem;
+}
+
+.ChickItemImg img {
+    width: 100%;
+}
+
+.ChickItemDesc {
+    flex: auto;
+    padding: 0 20rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+}
+
+.Title {
+    font-size: 25rem;
+    margin: 0;
+}
+
+.ChickItemPrice {
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.Price {
+    font-size: 25rem;
+    font-weight: bold;
+}

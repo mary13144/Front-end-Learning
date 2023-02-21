@@ -11,7 +11,11 @@ const Counter = (props) => {
 	 */
 	const addMealHandler = () => {
 		// props.onAdd(props.meal);
-		ctx.addmel(props.meal);
+		// ctx.addmel(props.meal);
+		ctx.goodsDataDispatch({
+			type: 'ADD',
+			meal: props.meal
+		});
 	};
 
 	/*
@@ -19,7 +23,11 @@ const Counter = (props) => {
 	 */
 	const delMealHandler = () => {
 		// props.onDel(props.meal);
-		ctx.delmel(props.meal);
+		// ctx.delmel(props.meal);
+		ctx.goodsDataDispatch({
+			type: 'DEL',
+			meal: props.meal
+		});
 	};
 
 	return (

@@ -1,0 +1,23 @@
+.StudentList {
+    width: 800px;
+    height: 400px;
+    margin: 100px auto;
+}
+
+.StudentTable {
+    width: 100%;
+    border: 1px solid #aaaaaa;
+    border-collapse: collapse;
+}
+
+tr {
+    border: 1px solid #aaaaaa;
+}
+
+td {
+    border: 1px solid #aaaaaa;
+}
+
+th {
+    border: 1px solid #aaaaaa;
+}

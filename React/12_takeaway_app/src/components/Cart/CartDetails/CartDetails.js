@@ -24,7 +24,10 @@ const CartDetails = () => {
 
 	//设置清空购物车函数
 	const clearGoods = (e) => {
-		ctx.ClearCart();
+		// ctx.ClearCart();
+		ctx.goodsDataDispatch({
+			type: 'Clear'
+		});
 		setClearCart(false);
 	};
 
