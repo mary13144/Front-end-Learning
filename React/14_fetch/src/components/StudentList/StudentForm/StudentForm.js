@@ -76,7 +76,7 @@ const StudentForm = (props) => {
 			if (!resStu.ok) {
 				throw new Error('数据添加失败');
 			}
-			ctx.fetchData('http://localhost:1337/api/students');
+			ctx.fetchData();
 		} catch (e) {
 			setError(e);
 		} finally {
@@ -99,7 +99,7 @@ const StudentForm = (props) => {
 			if (!resStu.ok) {
 				throw new Error('数据修改失败');
 			}
-			ctx.fetchData('http://localhost:1337/api/students');
+			ctx.fetchData();
 		} catch (e) {
 			setError(e);
 		} finally {
