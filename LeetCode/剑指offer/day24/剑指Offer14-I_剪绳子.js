@@ -11,3 +11,5 @@ var cuttingRope = function(n) {
 	return result;
 
 };
+
+console.log(cuttingRope(3));
